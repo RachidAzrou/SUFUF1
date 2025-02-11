@@ -1,0 +1,242 @@
+/* Algemene stijlen */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 400px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #963E56;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #D9A347;
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #6BB85C;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #5aa34d;
+  transform: scale(1.05);
+}
+
+.status-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.status {
+  text-align: center;
+}
+
+/* Modernere lichten */
+.light {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: grey;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem; /* Grootte van de symbolen */
+}
+
+.light.green {
+  background-color: #28a745; /* Groen licht */
+}
+
+.light.red {
+  background-color: #dc3545; /* Rood licht */
+}
+
+.light.grey {
+  background-color: grey; /* Grijs licht */
+}
+
+/* Symbolen in de lichten */
+.light i {
+  color: white; /* Witte kleur voor de symbolen */
+  display: none; /* Verberg het symbool standaard */
+}
+
+/* Mooiere terugknop */
+.back-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #963E56;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #7a3248;
+  transform: scale(1.05);
+}
+
+/* Modernere schakelaars voor OK/NOK */
+.switch-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.switch-container label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 5px;
+  bottom: 5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #28a745; /* Groen voor OK */
+}
+
+input:checked + .slider:before {
+  transform: translateX(50px);
+}
+
+input:checked + .slider.nok {
+  background-color: #dc3545; /* Rood voor NOK */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    min-height: 90vh;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 300px;
+  }
+
+  .light {
+    width: 100px;
+    height: 100px;
+  }
+
+  .switch {
+    width: 80px;
+    height: 40px;
+  }
+
+  .slider:before {
+    height: 30px;
+    width: 30px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(40px);
+  }
+}
