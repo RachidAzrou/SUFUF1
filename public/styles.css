@@ -1,7 +1,7 @@
 /* Algemene stijlen */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, rgba(245, 247, 250, 0.9), rgba(195, 207, 226, 0.9)), url('images/thet.jpg');
+  background: linear-gradient(135deg, rgba(245, 247, 250, 0.9), rgba(195, 207, 226, 0.9)), url('images/123.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -85,7 +85,7 @@ button:hover {
   background-color: #963E56; /* Rode achtergrondkleur */
   position: absolute; /* Positie linksonder */
   bottom: 20px;
-  left: 20px;
+  left: 30px;
   text-decoration: none; /* Geen onderstreping */
   color: white; /* Witte tekst */
   border-radius: 5px; /* Afgeronde hoeken */
