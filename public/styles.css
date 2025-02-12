@@ -83,13 +83,14 @@ button:hover {
   width: auto; /* Breedte aanpassen aan de inhoud */
   padding: 10px 20px; /* Padding voor een betere uitstraling */
   background-color: #963E56; /* Rode achtergrondkleur */
-  position: absolute; /* Positie linksonder */
-  bottom: 40px;
-  left: 120px;
+  position: fixed; /* Vaste positie op het scherm */
+  bottom: 20px; /* 20 pixels vanaf de onderkant */
+  right: 20px; /* 20 pixels vanaf de rechterkant */
   text-decoration: none; /* Geen onderstreping */
   color: white; /* Witte tekst */
   border-radius: 5px; /* Afgeronde hoeken */
   transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
+  z-index: 1000; /* Zorg ervoor dat de knop boven andere elementen ligt */
 }
 
 /* Hover-effect voor de terug-knop */
