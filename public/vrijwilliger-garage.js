@@ -16,7 +16,7 @@ socket.on('initialStatus', (data) => {
 okSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
     nokSwitch.checked = false;
-    socket.emit('updateStatus', { room: 'garage', status: 'green' });//was status 'OK' ipv 'green'
+    socket.emit('updateStatus', { room: 'garage', status: 'OK' });//was status 'OK' ipv 'green'
   } else if (!okSwitch.checked && !nokSwitch.checked) {
     socket.emit('updateStatus', { room: 'garage', status: 'OFF' });
   }
