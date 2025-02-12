@@ -34,9 +34,17 @@ body {
 
 h1 {
   font-size: 4rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Verminderde marge */
   color: #963E56;
   font-weight: 600;
+}
+
+h1 small {
+  display: block; /* Zorgt ervoor dat de Arabische tekst onder de Nederlandse komt */
+  font-size: 1.5rem; /* Kleinere tekstgrootte voor de ondertitel */
+  color: #963E56; /* Zelfde kleur als de hoofdtekst, of pas aan indien gewenst */
+  margin-top: 5px; /* Kleine ruimte tussen de twee regels */
+  direction: rtl; /* Zorgt voor van rechts naar links richting */
 }
 
 h2 {
