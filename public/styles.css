@@ -6,123 +6,80 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Verander van center naar flex-start voor betere uitlijning */
   min-height: 100vh;
 }
 
 .container {
   text-align: center;
   background-color: white;
-  padding: 40px;
+  padding: 30px; /* Verlaagde padding voor minder ruimte aan de zijkanten */
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 1200px;
-  margin: 20px;
+  margin: 10px; /* Verminderde marge rondom de container */
   min-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Zet alles naar boven */
   align-items: center;
 }
 
+/* Logo - Verkorte marge om de titel dichterbij te krijgen */
 .logo {
   width: 400px;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Verminder marge naar beneden */
 }
 
 h1 {
   font-size: 4rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Verlaagde marge onder de titel */
   color: #963E56;
   font-weight: 600;
 }
 
 h2 {
   font-size: 2.5rem;
-  margin-bottom: 50px;
+  margin-bottom: 20px; /* Verlaagde marge onder de ondertitel */
   color: #D9A347;
   font-weight: 400;
 }
 
-/* Arabische vertaling onder de titel */
+/* Verhoog de vertaling naar het Arabisch en verklein de marge */
 h2 small {
-  display: block; /* Zorgt ervoor dat de tekst onder de h2 komt */
-  font-size: 2rem; /* Kleinere tekst voor de Arabische vertaling */
-  margin-top: 2px; /* Kleine ruimte tussen de Nederlandse en de Arabische tekst */
+  display: block; 
+  font-size: 1.8rem; /* Kleinere tekstgrootte voor de vertaling */
+  margin-top: 5px; /* Kleinere ruimte tussen de twee teksten */
   direction: rtl; /* Zorgt voor de juiste richting van rechts naar links */
-}
-
-.buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-button {
-  padding: 20px 40px;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #6BB85C;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background-color: #5aa34d;
-  transform: scale(1.05);
 }
 
 .status-container {
   display: flex;
-  gap: 40px;
+  gap: 30px; /* Verminderde ruimte tussen de statussen */
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px; /* Verminderde marge naar boven voor de status sectie */
 }
 
 .status {
   text-align: center;
 }
 
-/* Modernere lichten */
 .light {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   background-color: grey;
-  margin: 20px auto;
+  margin: 10px auto; /* Verminderde ruimte rondom de lichten */
   transition: background-color 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem; /* Grootte van de symbolen */
+  font-size: 3rem;
 }
 
-.light.green {
-  background-color: #28a745; /* Groen licht */
-}
-
-.light.red {
-  background-color: #dc3545; /* Rood licht */
-}
-
-.light.grey {
-  background-color: grey; /* Grijs licht */
-}
-
-/* Symbolen in de lichten */
-.light i {
-  color: white; /* Witte kleur voor de symbolen */
-  display: none; /* Verberg het symbool standaard */
-}
-
-/* Mooiere terugknop */
 .back-button {
   padding: 15px 30px;
   font-size: 1.2rem;
@@ -132,87 +89,18 @@ button:hover {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 30px;
+  margin-top: 20px; /* Verminderde ruimte voor de terugknop */
   text-decoration: none;
 }
 
-.back-button:hover {
-  background-color: #7a3248;
-  transform: scale(1.05);
-}
-
-/* Modernere schakelaars voor OK/NOK */
-.switch-container {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-}
-
-.switch-container label {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 100px;
-  height: 50px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 40px;
-  width: 40px;
-  left: 5px;
-  bottom: 5px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #28a745; /* Groen voor OK */
-}
-
-input:checked + .slider:before {
-  transform: translateX(50px);
-}
-
-input:checked + .slider.nok {
-  background-color: #dc3545; /* Rood voor NOK */
-}
-
-/* Responsieve design voor kleinere schermen (mobiel) */
+/* Responsieve aanpassingen voor kleinere schermen */
 @media (max-width: 768px) {
   .container {
     padding: 20px;
     min-height: 90vh;
     display: flex;
-    justify-content: center; /* Horizontaal centreren */
-    align-items: center; /* Verticaal centreren */
+    justify-content: flex-start; /* Verplaats naar boven */
+    align-items: center;
   }
 
   h1 {
@@ -226,7 +114,7 @@ input:checked + .slider.nok {
   button {
     padding: 15px 30px;
     font-size: 1.2rem;
-    width: 90%; /* Zorg ervoor dat de knoppen schalen op mobiel */
+    width: 90%;
   }
 
   .logo {
@@ -236,47 +124,5 @@ input:checked + .slider.nok {
   .light {
     width: 100px;
     height: 100px;
-  }
-
-  .switch {
-    width: 80px;
-    height: 40px;
-  }
-
-  .slider:before {
-    height: 30px;
-    width: 30px;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(40px);
-  }
-
-  /* Status-container (lichten) */
-  .status-container {
-    flex-direction: column; /* Lichten staan onder elkaar op mobiel */
-    align-items: center; /* Centraal uitlijnen */
-    gap: 20px;
-    width: 100%; /* Volledige breedte */
-    max-width: none; /* Geen max breedte */
-    margin: 0 auto; /* Zorg ervoor dat de container in het midden van het scherm staat */
-    padding: 0; /* Geen padding voor centrering */
-  }
-
-  .status {
-    text-align: center;
-  }
-}
-
-/* Horizontale weergave van mobiele schermen (landscape) */
-@media (orientation: landscape) {
-  .status-container {
-    flex-direction: row; /* Lichten staan naast elkaar in landscape-modus */
-    justify-content: center; /* Centraal uitlijnen */
-    gap: 40px;
-  }
-
-  .status {
-    text-align: center;
   }
 }
