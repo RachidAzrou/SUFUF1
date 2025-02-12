@@ -73,10 +73,12 @@ button:hover {
 
 .status-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamisch aantal kolommen afhankelijk van de schermgrootte */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Zorgt voor dynamische kolommen, afhankelijk van schermgrootte */
   gap: 40px;
   justify-content: center;
   margin-top: 40px;
+  width: 100%; /* Zorg ervoor dat de container de volledige breedte benut */
+  max-width: 1200px; /* Zorg ervoor dat de container niet breder wordt dan 1200px */
 }
 
 .status {
@@ -199,7 +201,7 @@ input:checked + .slider.nok {
   background-color: #dc3545; /* Rood voor NOK */
 }
 
-/* Responsive design voor kleinere schermen (mobiel) */
+/* Responsieve design voor kleinere schermen (mobiel) */
 @media (max-width: 768px) {
   .container {
     padding: 20px;
@@ -244,7 +246,7 @@ input:checked + .slider.nok {
   }
 
   .status-container {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamische weergave van lichten */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dynamische weergave van lichten */
     gap: 20px;
   }
 
@@ -289,5 +291,13 @@ input:checked + .slider.nok {
 
   button {
     width: 200px; /* Zorg ervoor dat de knoppen breed genoeg zijn */
+  }
+}
+
+/* Horizontale weergave van mobiele schermen (landscape) */
+@media (orientation: landscape) {
+  .status-container {
+    grid-template-columns: repeat(3, 1fr); /* Zorg ervoor dat de lichten naast elkaar staan op horizontale schermen */
+    gap: 40px;
   }
 }
