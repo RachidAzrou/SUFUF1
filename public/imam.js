@@ -37,4 +37,4 @@ function updateLight(room, status) {
       crossIcon.style.display = 'none'; // Verberg het kruisje
     }
   }
-};
+}

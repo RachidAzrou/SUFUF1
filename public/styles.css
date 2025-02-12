@@ -1,7 +1,11 @@
 /* Algemene stijlen */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, rgba(245, 247, 250, 0.9), rgba(195, 207, 226, 0.9)), url('images/3625.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
   display: flex;
@@ -54,20 +58,44 @@ h2 {
   margin-top: 20px;
 }
 
+/* Stijl voor alle knoppen (behalve de terug-knop) */
 button {
-  padding: 20px 40px;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #6BB85C;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 200px; /* Vaste breedte voor alle knoppen */
+  height: 50px; /* Vaste hoogte voor alle knoppen */
+  margin: 10px; /* Ruimte tussen de knoppen */
+  font-size: 16px; /* Tekstgrootte */
+  border: none; /* Geen rand */
+  border-radius: 5px; /* Afgeronde hoeken */
+  background-color: #6BB85C; /* Groene achtergrondkleur */
+  color: white; /* Witte tekst */
+  cursor: pointer; /* Verander de muiscursor */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
 }
 
+/* Hover-effect voor knoppen */
 button:hover {
-  background-color: #5aa34d;
-  transform: scale(1.05);
+  background-color: #5aa34d; /* Donkerder groen bij hover */
+  transform: scale(1.05); /* Licht vergroten bij hover */
+}
+
+/* Stijl voor de terug-knop */
+.back-button {
+  width: auto; /* Breedte aanpassen aan de inhoud */
+  padding: 10px 20px; /* Padding voor een betere uitstraling */
+  background-color: #963E56; /* Rode achtergrondkleur */
+  position: absolute; /* Positie linksonder */
+  bottom: 10px;
+  left: 10px;
+  text-decoration: none; /* Geen onderstreping */
+  color: white; /* Witte tekst */
+  border-radius: 5px; /* Afgeronde hoeken */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
+}
+
+/* Hover-effect voor de terug-knop */
+.back-button:hover {
+  background-color: #7a3248; /* Donkerder rood bij hover */
+  transform: scale(1.05); /* Licht vergroten bij hover */
 }
 
 .status-container {
@@ -112,25 +140,6 @@ button:hover {
 .light i {
   color: white; /* Witte kleur voor de symbolen */
   display: none; /* Verberg het symbool standaard */
-}
-
-/* Mooiere terugknop */
-.back-button {
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #963E56;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 30px;
-  text-decoration: none;
-}
-
-.back-button:hover {
-  background-color: #7a3248;
-  transform: scale(1.05);
 }
 
 /* Modernere schakelaars voor OK/NOK */
