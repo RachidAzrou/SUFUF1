@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative; /* Voeg dit toe */
 }
 
 .logo {
@@ -78,7 +79,6 @@ button:hover {
   transform: scale(1.05); /* Licht vergroten bij hover */
 }
 
-/* Stijl voor de terug-knop */
 /* Stijl voor de terug-knop */
 .back-button {
   width: auto; /* Breedte aanpassen aan de inhoud */
