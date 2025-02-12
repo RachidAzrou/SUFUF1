@@ -79,13 +79,14 @@ button:hover {
 }
 
 /* Stijl voor de terug-knop */
+/* Stijl voor de terug-knop */
 .back-button {
   width: auto; /* Breedte aanpassen aan de inhoud */
   padding: 10px 20px; /* Padding voor een betere uitstraling */
   background-color: #963E56; /* Rode achtergrondkleur */
-  position: fixed; /* Vaste positie op het scherm */
-  bottom: 20px; /* 20 pixels vanaf de onderkant */
-  right: 20px; /* 20 pixels vanaf de rechterkant */
+  position: absolute; /* Positie relatief aan de container */
+  bottom: 20px; /* 20 pixels vanaf de onderkant van de container */
+  left: 20px; /* 20 pixels vanaf de linkerkant van de container */
   text-decoration: none; /* Geen onderstreping */
   color: white; /* Witte tekst */
   border-radius: 5px; /* Afgeronde hoeken */
