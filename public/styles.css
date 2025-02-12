@@ -49,8 +49,8 @@ h2 {
 /* Arabische vertaling onder de titel */
 h2 small {
   display: block; /* Zorgt ervoor dat de tekst onder de h2 komt */
-  font-size: 1.5rem; /* Kleinere tekst voor de Arabische vertaling */
-  margin-top: 5px; /* Kleine ruimte tussen de Nederlandse en de Arabische tekst */
+  font-size: 2rem; /* Kleinere tekst voor de Arabische vertaling */
+  margin-top: 2px; /* Kleine ruimte tussen de Nederlandse en de Arabische tekst */
   direction: rtl; /* Zorgt voor de juiste richting van rechts naar links */
 }
 
