@@ -63,7 +63,7 @@ button {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 200px; /* Zorg ervoor dat alle knoppen dezelfde breedte hebben */
+  width: 200px; /* Alle knoppen hebben dezelfde breedte */
 }
 
 button:hover {
@@ -72,16 +72,15 @@ button:hover {
 }
 
 .status-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamisch aantal kolommen afhankelijk van de schermgrootte */
   gap: 40px;
   justify-content: center;
   margin-top: 40px;
-  flex-wrap: wrap;  /* Zorg ervoor dat ze in meerdere rijen kunnen komen als nodig */
 }
 
 .status {
   text-align: center;
-  flex: 1; /* Zorg ervoor dat de lichten mooi uitlijnen */
 }
 
 /* Modernere lichten */
@@ -113,7 +112,7 @@ button:hover {
 
 /* Symbolen in de lichten */
 .light i {
-  color: white; /* Witte kleur voor de symbolen */
+  color: white;
   display: none; /* Verberg het symbool standaard */
 }
 
@@ -200,7 +199,7 @@ input:checked + .slider.nok {
   background-color: #dc3545; /* Rood voor NOK */
 }
 
-/* Responsive design */
+/* Responsive design voor kleinere schermen (mobiel) */
 @media (max-width: 768px) {
   .container {
     padding: 20px;
@@ -218,7 +217,7 @@ input:checked + .slider.nok {
   button {
     padding: 15px 30px;
     font-size: 1.2rem;
-    width: 90%;  /* Zorg ervoor dat knoppen goed schalen op mobiel */
+    width: 90%; /* Zorg ervoor dat de knoppen schalen op mobiel */
   }
 
   .logo {
@@ -244,14 +243,51 @@ input:checked + .slider.nok {
     transform: translateX(40px);
   }
 
-  /* Verbeter de uitlijning van de lichten op mobiel */
   .status-container {
-    flex-direction: column;
-    gap: 20px;  /* Verminder de ruimte tussen de lichten op mobiel */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamische weergave van lichten */
+    gap: 20px;
   }
 
   .status {
     text-align: center;
-    flex: none; /* Zorg ervoor dat ze niet te veel ruimte innemen */
+    flex: none;
+  }
+}
+
+/* Extra grotere schermen zoals laptops, desktops en tv's */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .buttons {
+    gap: 30px; /* Meer ruimte tussen knoppen */
+  }
+
+  .logo {
+    width: 400px;
+  }
+
+  .light {
+    width: 150px;
+    height: 150px;
+  }
+
+  .status-container {
+    grid-template-columns: repeat(3, 1fr); /* Plaats 3 kolommen voor grotere schermen */
+    gap: 40px;
+  }
+
+  button {
+    width: 200px; /* Zorg ervoor dat de knoppen breed genoeg zijn */
   }
 }
