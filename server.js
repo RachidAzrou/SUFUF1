@@ -5,21 +5,26 @@ const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
+
+// WebSocket-server configuratie met CORS
 const io = new Server(server, {
   cors: {
-    origin: "https://sufuf-app.vercel.app/", // Vervang dit door de URL van je Vercel-app
-    methods: ["GET", "POST"]
-  }
+    origin: ["https://sufuf-app.vercel.app"], // Voeg je frontend-domeinen toe
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+    credentials: true,
+  },
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Sla de status op
+// Status data
 let status = {
   'first-floor': 'OFF', // Standaardstatus
   'garage': 'OFF', // Standaardstatus
 };
 
+// WebSocket-communicatie
 io.on('connection', (socket) => {
   console.log('Een gebruiker is verbonden');
 
@@ -29,7 +34,14 @@ io.on('connection', (socket) => {
   // Luister naar statusupdates van vrijwilligers
   socket.on('updateStatus', (data) => {
     console.log('Statusupdate ontvangen:', data); // Log de ontvangen data
-    status[data.room] = data.status === 'OFF' ? 'grey' : data.status === 'OK' ? 'green' : 'red'; // Sla de status op
+    if (data.status === 'OK') {
+      status[data.room] = 'green';
+    } else if (data.status === 'NOK') {
+      status[data.room] = 'red';
+    } else if (data.status === 'OFF') {
+      status[data.room] = 'grey'; // OF als de status uitgeschakeld is
+    }
+
     io.emit('statusUpdated', { room: data.room, status: status[data.room] }); // Stuur de update naar alle clients
   });
 
