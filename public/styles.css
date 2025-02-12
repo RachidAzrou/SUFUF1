@@ -74,11 +74,14 @@ button:hover {
 .status-container {
   display: flex;
   justify-content: center; /* Centraal uitlijnen */
+  align-items: center; /* Verticaal centreren */
   gap: 40px; /* Ruimte tussen de lichten */
   margin-top: 40px;
-  width: 100%; /* Volledige breedte */
+  width: 100%;
   max-width: 1200px; /* Max breedte van de container */
   flex-wrap: wrap; /* Zorgt ervoor dat ze op kleinere schermen onder elkaar vallen */
+  margin-left: auto; /* Zorgt ervoor dat de container gecentreerd is */
+  margin-right: auto; /* Zorgt ervoor dat de container gecentreerd is */
 }
 
 .status {
@@ -248,8 +251,10 @@ input:checked + .slider.nok {
   /* Status-container (lichten) */
   .status-container {
     flex-direction: column; /* Lichten staan onder elkaar op mobiel */
-    align-items: center; /* Zorg ervoor dat ze gecentreerd zijn */
+    align-items: center; /* Centraal uitlijnen */
     gap: 20px;
+    width: 100%; /* Volledige breedte */
+    max-width: none; /* Geen max breedte */
   }
 
   .status {
