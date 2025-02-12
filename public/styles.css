@@ -63,7 +63,6 @@ button {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 200px; /* Alle knoppen hebben dezelfde breedte */
 }
 
 button:hover {
@@ -73,15 +72,9 @@ button:hover {
 
 .status-container {
   display: flex;
-  justify-content: center; /* Centraal uitlijnen */
-  align-items: center; /* Verticaal centreren */
-  gap: 40px; /* Ruimte tussen de lichten */
+  gap: 40px;
+  justify-content: center;
   margin-top: 40px;
-  width: 100%;
-  max-width: 1200px; /* Max breedte van de container */
-  flex-wrap: wrap; /* Zorgt ervoor dat ze op kleinere schermen onder elkaar vallen */
-  margin-left: auto; /* Zorgt ervoor dat de container gecentreerd is */
-  margin-right: auto; /* Zorgt ervoor dat de container gecentreerd is */
 }
 
 .status {
@@ -94,7 +87,7 @@ button:hover {
   height: 150px;
   border-radius: 50%;
   background-color: grey;
-  margin: 20px;
+  margin: 20px auto;
   transition: background-color 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -117,7 +110,7 @@ button:hover {
 
 /* Symbolen in de lichten */
 .light i {
-  color: white;
+  color: white; /* Witte kleur voor de symbolen */
   display: none; /* Verberg het symbool standaard */
 }
 
@@ -209,6 +202,9 @@ input:checked + .slider.nok {
   .container {
     padding: 20px;
     min-height: 90vh;
+    display: flex;
+    justify-content: center; /* Horizontaal centreren */
+    align-items: center; /* Verticaal centreren */
   }
 
   h1 {
@@ -255,6 +251,8 @@ input:checked + .slider.nok {
     gap: 20px;
     width: 100%; /* Volledige breedte */
     max-width: none; /* Geen max breedte */
+    margin: 0 auto; /* Zorg ervoor dat de container in het midden van het scherm staat */
+    padding: 0; /* Geen padding voor centrering */
   }
 
   .status {
@@ -266,46 +264,6 @@ input:checked + .slider.nok {
 @media (orientation: landscape) {
   .status-container {
     flex-direction: row; /* Lichten staan naast elkaar in landscape-modus */
-    justify-content: center; /* Centraal uitlijnen */
-    gap: 40px;
-  }
-
-  .status {
-    text-align: center;
-  }
-}
-
-/* Extra grotere schermen zoals laptops, desktops en tv's */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-    padding: 40px;
-  }
-
-  h1 {
-    font-size: 4rem;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  .buttons {
-    gap: 30px; /* Meer ruimte tussen knoppen */
-  }
-
-  .logo {
-    width: 400px;
-  }
-
-  .light {
-    width: 150px;
-    height: 150px;
-  }
-
-  /* Status-container (lichten) */
-  .status-container {
-    flex-direction: row; /* Lichten staan naast elkaar op grote schermen */
     justify-content: center; /* Centraal uitlijnen */
     gap: 40px;
   }
