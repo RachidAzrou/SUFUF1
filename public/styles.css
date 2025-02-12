@@ -63,6 +63,7 @@ button {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  flex-grow: 1; /* Zorg ervoor dat alle knoppen even groot zijn */
 }
 
 button:hover {
@@ -75,13 +76,14 @@ button:hover {
   gap: 40px;
   justify-content: center;
   margin-top: 40px;
+  flex-wrap: wrap; /* Voeg flex-wrap toe voor mobiele weergave */
 }
 
 .status {
   text-align: center;
+  width: 200px; /* Zorgt voor een nette uitlijning van de statussen */
 }
 
-/* Modernere lichten */
 .light {
   width: 150px;
   height: 150px;
@@ -108,13 +110,11 @@ button:hover {
   background-color: grey; /* Grijs licht */
 }
 
-/* Symbolen in de lichten */
 .light i {
   color: white; /* Witte kleur voor de symbolen */
   display: none; /* Verberg het symbool standaard */
 }
 
-/* Mooiere terugknop */
 .back-button {
   padding: 15px 30px;
   font-size: 1.2rem;
@@ -133,7 +133,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Modernere schakelaars voor OK/NOK */
 .switch-container {
   display: flex;
   gap: 30px;
@@ -197,7 +196,7 @@ input:checked + .slider.nok {
   background-color: #dc3545; /* Rood voor NOK */
 }
 
-/* Responsive design */
+/* Responsief design */
 @media (max-width: 768px) {
   .container {
     padding: 20px;
@@ -215,6 +214,7 @@ input:checked + .slider.nok {
   button {
     padding: 15px 30px;
     font-size: 1.2rem;
+    flex-grow: 0; /* Knoppen worden niet groter op mobiel */
   }
 
   .logo {
