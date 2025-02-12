@@ -1,4 +1,5 @@
-const socket = io();
+// Verbind met de externe Socket.IO-server
+const socket = io('https://sufuf-socketio-server.onrender.com'); // Vervang dit door de URL van je Render-server
 
 // Luister naar de initiële status
 socket.on('initialStatus', (data) => {

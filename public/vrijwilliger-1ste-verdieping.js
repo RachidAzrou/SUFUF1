@@ -1,4 +1,5 @@
-const socket = io();
+// Verbind met de externe Socket.IO-server
+const socket = io('https://sufuf-socketio-server.onrender.com'); // Vervang dit door de URL van je Render-server
 
 const okSwitch = document.getElementById('ok-switch');
 const nokSwitch = document.getElementById('nok-switch');
@@ -15,7 +16,7 @@ socket.on('initialStatus', (data) => {
 okSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
     nokSwitch.checked = false;
-    socket.emit('updateStatus', { room: 'first-floor', status: 'OK' });
+    socket.emit('updateStatus', { room: 'first-floor', status: 'green' }); // was status 'OK' 
   } else if (!okSwitch.checked && !nokSwitch.checked) {
     socket.emit('updateStatus', { room: 'first-floor', status: 'OFF' });
   }
