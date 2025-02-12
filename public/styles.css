@@ -63,6 +63,7 @@ button {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 200px; /* Zorg ervoor dat alle knoppen dezelfde breedte hebben */
 }
 
 button:hover {
@@ -75,10 +76,12 @@ button:hover {
   gap: 40px;
   justify-content: center;
   margin-top: 40px;
+  flex-wrap: wrap;  /* Zorg ervoor dat ze in meerdere rijen kunnen komen als nodig */
 }
 
 .status {
   text-align: center;
+  flex: 1; /* Zorg ervoor dat de lichten mooi uitlijnen */
 }
 
 /* Modernere lichten */
@@ -215,6 +218,7 @@ input:checked + .slider.nok {
   button {
     padding: 15px 30px;
     font-size: 1.2rem;
+    width: 90%;  /* Zorg ervoor dat knoppen goed schalen op mobiel */
   }
 
   .logo {
@@ -238,5 +242,16 @@ input:checked + .slider.nok {
 
   input:checked + .slider:before {
     transform: translateX(40px);
+  }
+
+  /* Verbeter de uitlijning van de lichten op mobiel */
+  .status-container {
+    flex-direction: column;
+    gap: 20px;  /* Verminder de ruimte tussen de lichten op mobiel */
+  }
+
+  .status {
+    text-align: center;
+    flex: none; /* Zorg ervoor dat ze niet te veel ruimte innemen */
   }
 }
