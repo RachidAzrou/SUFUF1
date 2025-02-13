@@ -6,7 +6,7 @@ function controleerWachtwoord() {
   const ruimteScherm = document.getElementById('ruimte-scherm');
 
   // Stel hier het gewenste wachtwoord in (bijvoorbeeld "1234")
-  const correctWachtwoord = "1234";
+  const correctWachtwoord = "mefen1";
 
   if (ingevoerdWachtwoord === correctWachtwoord) {
     // Wachtwoord is correct, toon het ruimtescherm
