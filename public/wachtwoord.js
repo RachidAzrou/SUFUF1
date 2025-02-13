@@ -13,8 +13,8 @@ document.getElementById('wachtwoordForm').addEventListener('submit', function (e
 
     // Controleer het wachtwoord voor de juiste ruimte
     const wachtwoorden = {
-        '1ste-verdieping': '1234',
-        'garage': 'abcd'
+        '1ste-verdieping': 'test',
+        'garage': 'test'
     };
 
     // Log de ingevoerde wachtwoord en het correcte wachtwoord om te zien of ze overeenkomen
