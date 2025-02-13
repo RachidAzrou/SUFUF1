@@ -1,36 +1,43 @@
-document.getElementById('wachtwoordForm').addEventListener('submit', function (e) {
+document.addEventListener('DOMContentLoaded', function () {
+  // Voeg een submit event listener toe aan het formulier
+  document.getElementById('wachtwoordForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Haal het wachtwoord op
-    const wachtwoord = document.getElementById('wachtwoord').value;
-
-    // Controleer of het wachtwoord is opgehaald
-    console.log('Ingevoerde wachtwoord: ', wachtwoord); // Testen of je de waarde goed krijgt
-
+    // Haal de ingevoerde waarde op en verwijder eventuele overtollige spaties
+    const wachtwoord = document.getElementById('wachtwoord').value.trim();
     const errorDiv = document.getElementById('error');
 
-    // Haal de URL-parameter 'ruimte' op
-    const urlParams = new URLSearchParams(window.location.search);
-    const ruimte = urlParams.get('ruimte'); // Dit haalt de waarde op, bijvoorbeeld '1ste-verdieping' of 'garage'
+    // Log de volledige URL om te controleren of de querystring aanwezig is
+    console.log("Volledige URL: ", window.location.href);
 
-    // Log de waarde van de ruimte-parameter om te controleren of deze correct wordt opgehaald
+    // Haal de 'ruimte' parameter op uit de URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const ruimte = urlParams.get('ruimte');
     console.log('Ruimte: ', ruimte);
 
-    // Controleer het wachtwoord voor de juiste ruimte
+    // Stel de wachtwoorden per ruimte in
     const wachtwoorden = {
-        '1ste-verdieping': 'test',
-        'garage': 'test'
+      '1ste-verdieping': 'test',
+      'garage': 'test'
     };
 
-    // Log de ingevoerde wachtwoord en het correcte wachtwoord om te zien of ze overeenkomen
-    console.log('Ingevoerd wachtwoord: ', wachtwoord); // Is de waarde van het wachtwoord correct?
-    console.log('Correct wachtwoord voor ruimte: ', wachtwoorden[ruimte]); // Moet je de juiste waarde vinden
-
-    if (wachtwoorden[ruimte] && wachtwoord === wachtwoorden[ruimte]) {
-        // Wachtwoord klopt, stuur door naar het juiste vrijwilligersscherm
-        window.location.href = `vrijwilliger-${ruimte}.html`;  // Dynamisch doorverwijzen
-    } else {
-        // Wachtwoord is fout
-        errorDiv.style.display = 'block';
+    // Update de titel op basis van de gekozen ruimte (optioneel)
+    if (ruimte) {
+      document.getElementById('pageTitle').innerText = `Wachtwoord - ${ruimte}`;
     }
+
+    // Debug logs
+    console.log('Ingevoerd wachtwoord: ', wachtwoord);
+    console.log('Correct wachtwoord voor ruimte: ', wachtwoorden[ruimte]);
+
+    // Vergelijk het ingevoerde wachtwoord met het verwachte wachtwoord
+    if (wachtwoorden[ruimte] && wachtwoord === wachtwoorden[ruimte]) {
+      // Als het wachtwoord klopt, doorverwijzen naar de juiste vrijwilligerspagina.
+      // Gebruik een absoluut pad indien nodig, bijvoorbeeld: `/vrijwilliger-${ruimte}.html`
+      window.location.href = `vrijwilliger-${ruimte}.html`;
+    } else {
+      // Als het wachtwoord niet klopt, toon de foutmelding
+      errorDiv.style.display = 'block';
+    }
+  });
 });
