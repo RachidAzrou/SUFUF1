@@ -1,7 +1,11 @@
 /* Algemene stijlen */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, rgba(245, 247, 250, 0.9), rgba(195, 207, 226, 0.9)), url('images/5540822.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
   display: flex;
@@ -24,24 +28,25 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative; /* Voeg dit toe */
 }
 
 .logo {
   width: 400px;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 10px; /* Verkleind van 30px naar 10px */
 }
 
 h1 {
   font-size: 4rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Verkleind van 20px naar 10px */
   color: #963E56;
   font-weight: 600;
 }
 
 h2 {
   font-size: 2.5rem;
-  margin-bottom: 50px;
+  margin-bottom: 20px; /* Verkleind van 50px naar 20px */
   color: #D9A347;
   font-weight: 400;
 }
@@ -51,30 +56,55 @@ h2 {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 10px; /* Verkleind van 20px naar 10px */
 }
 
+/* Stijl voor alle knoppen (behalve de terug-knop) */
 button {
-  padding: 20px 40px;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #6BB85C;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 200px; /* Vaste breedte voor alle knoppen */
+  height: 50px; /* Vaste hoogte voor alle knoppen */
+  margin: 10px; /* Ruimte tussen de knoppen */
+  font-size: 16px; /* Tekstgrootte */
+  border: none; /* Geen rand */
+  border-radius: 5px; /* Afgeronde hoeken */
+  background-color: #6BB85C; /* Groene achtergrondkleur */
+  color: white; /* Witte tekst */
+  cursor: pointer; /* Verander de muiscursor */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
 }
 
+/* Hover-effect voor knoppen */
 button:hover {
-  background-color: #5aa34d;
-  transform: scale(1.05);
+  background-color: #5aa34d; /* Donkerder groen bij hover */
+  transform: scale(1.05); /* Licht vergroten bij hover */
+}
+
+/* Stijl voor de terug-knop */
+.back-button {
+  width: auto; /* Breedte aanpassen aan de inhoud */
+  padding: 10px 20px; /* Padding voor een betere uitstraling */
+  background-color: #963E56; /* Rode achtergrondkleur */
+  position: absolute; /* Positie relatief aan de container */
+  bottom: 20px; /* 20 pixels vanaf de onderkant van de container */
+  left: 20px; /* 20 pixels vanaf de linkerkant van de container */
+  text-decoration: none; /* Geen onderstreping */
+  color: white; /* Witte tekst */
+  border-radius: 5px; /* Afgeronde hoeken */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
+  z-index: 1000; /* Zorg ervoor dat de knop boven andere elementen ligt */
+}
+
+/* Hover-effect voor de terug-knop */
+.back-button:hover {
+  background-color: #7a3248; /* Donkerder rood bij hover */
+  transform: scale(1.05); /* Licht vergroten bij hover */
 }
 
 .status-container {
   display: flex;
   gap: 40px;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px; /* Verkleind van 40px naar 20px */
 }
 
 .status {
@@ -114,32 +144,13 @@ button:hover {
   display: none; /* Verberg het symbool standaard */
 }
 
-/* Mooiere terugknop */
-.back-button {
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #963E56;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 30px;
-  text-decoration: none;
-}
-
-.back-button:hover {
-  background-color: #7a3248;
-  transform: scale(1.05);
-}
-
 /* Modernere schakelaars voor OK/NOK */
 .switch-container {
   display: flex;
   gap: 30px;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 20px; /* Verkleind van 40px naar 20px */
 }
 
 .switch-container label {
