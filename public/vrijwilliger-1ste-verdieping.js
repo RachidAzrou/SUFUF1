@@ -1,35 +1,9 @@
 // Verbind met de externe Socket.IO-server
-const socket = io('https://sufuf-socketio-server.onrender.com'); // Vervang dit door de URL van je Render-server
+const socket = io('https://sufuf-socketio-server.onrender.com');
 
 const okSwitch = document.getElementById('ok-switch');
 const nokSwitch = document.getElementById('nok-switch');
 
-// Laad de opgeslagen status bij het openen van de pagina
-socket.on('initialStatus', (data) => {
-  if (data['first-floor'] === 'green') {
-    okSwitch.checked = true;
-  } else if (data['first-floor'] === 'red') {
-    nokSwitch.checked = true;
-  }
-});
-
-okSwitch.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    nokSwitch.checked = false;
-    socket.emit('updateStatus', { room: 'first-floor', status: 'OK' }); // Verzend 'OK', server verwacht 'green'
-  } else if (!okSwitch.checked && !nokSwitch.checked) {
-    socket.emit('updateStatus', { room: 'first-floor', status: 'OFF' });
-  }
-});
-
-nokSwitch.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    okSwitch.checked = false;
-    socket.emit('updateStatus', { room: 'first-floor', status: 'NOK' }); // Verzend 'NOK', server verwacht 'red'
-  } else if (!okSwitch.checked && !nokSwitch.checked) {
-    socket.emit('updateStatus', { room: 'first-floor', status: 'OFF' });
-  }
-});
 // Functie om het wachtwoord te controleren
 function controleerWachtwoord() {
   const ingevoerdWachtwoord = document.getElementById('wachtwoord').value;
@@ -50,24 +24,49 @@ function controleerWachtwoord() {
   }
 }
 
-// Voeg event listeners toe voor de schakelaars (indien nodig)
-const okSwitch = document.getElementById('ok-switch');
-const nokSwitch = document.getElementById('nok-switch');
-
-okSwitch.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    nokSwitch.checked = false;
-    socket.emit('updateStatus', { room: 'first-floor', status: 'OK' });
-  } else if (!okSwitch.checked && !nokSwitch.checked) {
-    socket.emit('updateStatus', { room: 'first-floor', status: 'OFF' });
+// Luister naar de initiële status
+socket.on('initialStatus', (data) => {
+  console.log('Ontvangen initialStatus:', data);
+  if (data['first-floor'] === 'green') {
+    okSwitch.checked = true;
+  } else if (data['first-floor'] === 'red') {
+    nokSwitch.checked = true;
   }
 });
 
+// Luister naar statusupdates
+socket.on('statusUpdated', (data) => {
+  console.log('Status update ontvangen:', data);
+  if (data.room === 'first-floor') {
+    if (data.status === 'green') {
+      okSwitch.checked = true;
+      nokSwitch.checked = false;
+    } else if (data.status === 'red') {
+      nokSwitch.checked = true;
+      okSwitch.checked = false;
+    } else {
+      okSwitch.checked = false;
+      nokSwitch.checked = false;
+    }
+  }
+});
+
+// Schakelaar voor OK
+okSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    nokSwitch.checked = false;
+    socket.emit('updateStatus', { room: 'first-floor', status: 'green' });
+  } else if (!okSwitch.checked && !nokSwitch.checked) {
+    socket.emit('updateStatus', { room: 'first-floor', status: 'off' });
+  }
+});
+
+// Schakelaar voor NOK
 nokSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
     okSwitch.checked = false;
-    socket.emit('updateStatus', { room: 'first-floor', status: 'NOK' });
+    socket.emit('updateStatus', { room: 'first-floor', status: 'red' });
   } else if (!okSwitch.checked && !nokSwitch.checked) {
-    socket.emit('updateStatus', { room: 'first-floor', status: 'OFF' });
+    socket.emit('updateStatus', { room: 'first-floor', status: 'off' });
   }
 });
