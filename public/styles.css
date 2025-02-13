@@ -208,9 +208,72 @@ input:checked + .slider.nok {
   background-color: #dc3545; /* Rood voor NOK */
 }
 
+/* Specifieke stijlen voor het wachtwoordscherm */
+body.wachtwoord-scherm .container {
+  width: 90%;
+  max-width: 500px; /* Verklein de maximale breedte van de container voor dit scherm */
+  min-height: 70vh; /* Maak de container iets groter */
+  padding: 50px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Positie relatief voor de terugknop */
+}
+
+body.wachtwoord-scherm input {
+  width: 100%; /* Zorg ervoor dat het invoerveld de volledige breedte benut */
+  padding: 20px; /* Vergroot het invoerveld */
+  font-size: 1.2rem;
+  margin-bottom: 30px; /* Ruimte tussen het wachtwoordveld en de knop */
+  border-radius: 5px; /* Afronden van de hoeken */
+  border: 1px solid #ccc; /* Rand toevoegen voor het invoerveld */
+}
+
+body.wachtwoord-scherm button {
+  width: 100%; /* Maak de knop de volledige breedte van het formulier */
+  padding: 12px; /* Kleinere padding voor de knop */
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background-color: #6BB85C;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.wachtwoord-scherm button:hover {
+  background-color: #5aa34d; /* Donkerder groen bij hover */
+  transform: scale(1.05); /* Licht vergroten bij hover */
+}
+
+body.wachtwoord-scherm .back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #963E56;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px; /* Ruimte tussen de knop en andere elementen */
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.wachtwoord-scherm .back-button:hover {
+  background-color: #7a3248; /* Donkerder rood bij hover */
+  transform: scale(1.05); /* Licht vergroten bij hover */
+}
+
+body.wachtwoord-scherm #error {
+  color: red;
+  margin-top: 20px; /* Ruimte tussen foutmelding en andere elementen */
+}
+
 /* Responsieve design voor kleinere schermen (mobiel) */
 @media (max-width: 768px) {
-  .container {
+  body.wachtwoord-scherm .container {
     padding: 20px;
     min-height: 90vh;
     display: flex;
@@ -218,69 +281,24 @@ input:checked + .slider.nok {
     align-items: center; /* Verticaal centreren */
   }
 
-  h1 {
-    font-size: 3rem;
+  body.wachtwoord-scherm input {
+    padding: 15px; /* Kleinere padding voor mobiel */
+    font-size: 1.1rem;
   }
 
-  h2 {
-    font-size: 2rem;
-  }
-
-  button {
+  body.wachtwoord-scherm button {
     padding: 15px 30px;
     font-size: 1.2rem;
-    width: 90%; /* Zorg ervoor dat de knoppen schalen op mobiel */
+    width: 90%; /* Knoppen schalen voor mobiel */
   }
 
-  .logo {
-    width: 300px;
+  body.wachtwoord-scherm .back-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: auto;
   }
 
-  .light {
-    width: 100px;
-    height: 100px;
-  }
-
-  .switch {
-    width: 80px;
-    height: 40px;
-  }
-
-  .slider:before {
-    height: 30px;
-    width: 30px;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(40px);
-  }
-
-  /* Status-container (lichten) */
-  .status-container {
-    flex-direction: column; /* Lichten staan onder elkaar op mobiel */
-    align-items: center; /* Centraal uitlijnen */
-    gap: 20px;
-    width: 100%; /* Volledige breedte */
-    max-width: none; /* Geen max breedte */
-    margin: 0 auto; /* Zorg ervoor dat de container in het midden van het scherm staat */
-    padding: 0; /* Geen padding voor centrering */
-  }
-
-  .status {
-    text-align: center;
+  body.wachtwoord-scherm .logo {
+    width: 250px; /* Kleinere logo voor mobiel */
   }
 }
-
-/* Horizontale weergave van mobiele schermen (landscape) */
-@media (orientation: landscape) {
-  .status-container {
-    flex-direction: row; /* Lichten staan naast elkaar in landscape-modus */
-    justify-content: center; /* Centraal uitlijnen */
-    gap: 40px;
-  }
-
-  .status {
-    text-align: center;
-  }
-}
-
