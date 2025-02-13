@@ -24,7 +24,14 @@
 
     /* Verplaatsing van de statustitels en hun lichten naar boven */
     .imam-page .status-container {
+      display: flex; /* Flexbox inschakelen */
+      justify-content: space-between; /* Verdeling van ruimte tussen de secties */
       margin-top: 80px; /* Verplaats de container voor de statussen omhoog */
+    }
+
+    .imam-page .status {
+      width: 45%; /* Zorg ervoor dat beide secties niet de volledige breedte innemen */
+      text-align: center; /* Centreer de tekst in de secties */
     }
 
     .imam-page .status h2 {
@@ -39,6 +46,7 @@
     .imam-page .status {
       margin-bottom: 70px; /* Verhoog de ruimte tussen de secties */
     }
+
   </style>
 </head>
 <body class="imam-page"> <!-- Specifieke klasse voor imam-pagina -->
