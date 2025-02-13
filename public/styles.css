@@ -49,7 +49,7 @@ h2 {
   font-size: 2.5rem;
   margin-bottom: 20px; /* Verkleind van 50px naar 20px */
   margin-top: 0px; /* is test*/
-  color: #D9A347;
+  color: #D9A347; /* Gele kleur voor ondertitels */
   font-weight: 400;
 }
 
@@ -219,6 +219,13 @@ input:checked + .slider.nok {
   margin-top: 20px;
 }
 
+#wachtwoord-scherm h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px; /* Ruimte onder de ondertitel */
+  color: #D9A347; /* Gele kleur voor de ondertitel */
+  font-weight: 400;
+}
+
 .wachtwoord-input {
   width: 80%;
   max-width: 300px;
@@ -234,7 +241,7 @@ input:checked + .slider.nok {
   max-width: 300px;
   padding: 10px;
   font-size: 1rem;
-  background-color: #963E56;
+  background-color: #6BB85C; /* Groene kleur zoals andere knoppen */
   color: white;
   border: none;
   border-radius: 5px;
@@ -243,7 +250,7 @@ input:checked + .slider.nok {
 }
 
 .wachtwoord-knop:hover {
-  background-color: #7a3248;
+  background-color: #5aa34d; /* Donkerder groen bij hover */
   transform: scale(1.05);
 }
 
