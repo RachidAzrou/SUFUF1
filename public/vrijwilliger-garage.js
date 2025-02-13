@@ -18,9 +18,20 @@ function controleerWachtwoord() {
   }
 }
 
-// Voeg event listeners toe voor de schakelaars
+// Verbind met de externe Socket.IO-server
+const socket = io('https://sufuf-socketio-server.onrender.com'); // Vervang dit door de URL van je Render-server
+
 const okSwitch = document.getElementById('ok-switch');
 const nokSwitch = document.getElementById('nok-switch');
+
+// Laad de opgeslagen status bij het openen van de pagina
+socket.on('initialStatus', (data) => {
+  if (data['garage'] === 'green') {
+    okSwitch.checked = true;
+  } else if (data['garage'] === 'red') {
+    nokSwitch.checked = true;
+  }
+});
 
 okSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
