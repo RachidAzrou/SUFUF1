@@ -1,50 +1,27 @@
-// Zorg ervoor dat de code pas wordt uitgevoerd nadat de DOM volledig is geladen.
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('wachtwoordForm');
-  
-  // Controleer of het formulier en het input-element bestaan
-  if (!form) {
-    console.error("Het formulier met id 'wachtwoordForm' is niet gevonden.");
-    return;
-  }
-  
+  var form = document.getElementById('wachtwoordForm');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    
-    // Haal het wachtwoordveld op
-    const wachtwoordInput = document.getElementById('wachtwoord');
-    if (!wachtwoordInput) {
-      console.error("Het input-element met id 'wachtwoord' is niet gevonden.");
-      return;
-    }
-    
-    // Haal de waarde van het wachtwoord op en verwijder overtollige spaties
-    const wachtwoord = wachtwoordInput.value.trim();
-    
-    const errorDiv = document.getElementById('error');
-    
-    // Log de volledige URL voor debugging
-    console.log("Volledige URL: ", window.location.href);
-    
-    // Haal de URL-parameter 'ruimte' op
-    const urlParams = new URLSearchParams(window.location.search);
-    const ruimte = urlParams.get('ruimte');
-    console.log("Ruimte: ", ruimte);
-    
-    // Stel de wachtwoorden per ruimte in
-    const wachtwoorden = {
+    // Haal het wachtwoord op en verwijder eventuele spaties
+    var wachtwoord = document.getElementById('wachtwoord').value.trim();
+    var errorDiv = document.getElementById('error');
+
+    // Haal de 'ruimte' parameter op uit de URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var ruimte = urlParams.get('ruimte');
+
+    // Definieer de wachtwoorden voor de ruimtes
+    var wachtwoorden = {
       '1ste-verdieping': 'test',
       'garage': 'test'
     };
-    
-    console.log("Ingevoerd wachtwoord: ", wachtwoord);
-    console.log("Correct wachtwoord voor ruimte: ", wachtwoorden[ruimte]);
-    
-    // Als de ingevoerde waarde overeenkomt, doorsturen naar de juiste vrijwilligerspagina
+
+    // Controleer of het ingevoerde wachtwoord klopt
     if (wachtwoorden[ruimte] && wachtwoord === wachtwoorden[ruimte]) {
-      window.location.href = `vrijwilliger-${ruimte}.html`;
+      // Als het klopt, doorverwijzen naar de juiste pagina (bijv. vrijwilliger-1ste-verdieping.html)
+      window.location.href = 'vrijwilliger-' + ruimte + '.html';
     } else {
-      // Foutmelding tonen
+      // Als het niet klopt, toon de foutmelding
       errorDiv.style.display = 'block';
     }
   });
