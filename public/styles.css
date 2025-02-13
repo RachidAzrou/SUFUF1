@@ -39,7 +39,6 @@ body {
 
 h1 {
   font-size: 4rem;
-  margin-top: 0px; /* is test*/
   margin-bottom: 10px; /* Verkleind van 20px naar 10px */
   color: #963E56;
   font-weight: 600;
@@ -48,8 +47,7 @@ h1 {
 h2 {
   font-size: 2.5rem;
   margin-bottom: 20px; /* Verkleind van 50px naar 20px */
-  margin-top: 0px; /* is test*/
-  color: #D9A347; /* Gele kleur voor ondertitels */
+  color: #D9A347;
   font-weight: 400;
 }
 
@@ -123,7 +121,7 @@ button:hover {
   transition: background-color 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   font-size: 3rem; /* Grootte van de symbolen */
 }
@@ -208,62 +206,6 @@ input:checked + .slider:before {
 
 input:checked + .slider.nok {
   background-color: #dc3545; /* Rood voor NOK */
-}
-
-/* Stijlen voor het wachtwoordscherm */
-#wachtwoord-scherm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-#wachtwoord-scherm h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px; /* Ruimte onder de ondertitel */
-  color: #D9A347; /* Gele kleur voor de ondertitel */
-  font-weight: 400;
-}
-
-.wachtwoord-input {
-  width: 80%;
-  max-width: 300px;
-  padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #963E56;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.wachtwoord-knop {
-  width: 80%;
-  max-width: 300px;
-  padding: 10px;
-  font-size: 1rem;
-  background-color: #6BB85C; /* Groene kleur zoals andere knoppen */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.wachtwoord-knop:hover {
-  background-color: #5aa34d; /* Donkerder groen bij hover */
-  transform: scale(1.05);
-}
-
-.foutmelding {
-  color: #dc3545;
-  font-size: 0.9rem;
-  margin-top: 10px;
-}
-
-/* Stijlen voor het ruimtescherm */
-#ruimte-scherm {
-  display: none; /* Verborgen totdat het wachtwoord is ingevoerd */
-  margin-top: 20px;
 }
 
 /* Responsieve design voor kleinere schermen (mobiel) */
