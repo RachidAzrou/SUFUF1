@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Specifieke stijlen alleen voor de imam-pagina */
     .imam-page .logo {
       position: absolute;
       top: 10px;
@@ -15,9 +16,27 @@
       width: 250px;
       height: auto;
     }
+
+    /* Verplaatsing van de titel "Ruimtes" naar boven */
+    .imam-page h1 {
+      margin-top: 10px;
+    }
+
+    /* Verplaatsing van de statustitels en hun lichten naar boven */
+    .imam-page .status-container {
+      margin-top: 20px; /* Verplaats de container voor de statussen omhoog */
+    }
+
+    .imam-page .status h2 {
+      margin-top: 0; /* Verplaats de titels naar boven */
+    }
+
+    .imam-page .light {
+      margin-top: 5px; /* Verplaats de lichten naar boven */
+    }
   </style>
 </head>
-<body class="imam-page"> <!-- dit is toegevoegd voor imam logo -->
+<body class="imam-page"> <!-- Specifieke klasse voor imam-pagina -->
   <div class="container">
     <img src="images/logo.png" alt="Sufuf Logo" class="logo">
     <h1>Ruimtes</h1>
