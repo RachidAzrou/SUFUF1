@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     // Verwijder overtollige spaties
-    const wachtwoord = wachtwoordInput.value.trim();
+    //const wachtwoord = wachtwoordInput.value.trim();
     const errorDiv = document.getElementById('error');
     
     // Log de volledige URL voor debugging
