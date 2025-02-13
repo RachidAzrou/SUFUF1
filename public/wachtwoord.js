@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error("Het input-element met id 'wachtwoord' is niet gevonden.");
       return;
     }
-    // Verwijder overtollige spaties
-    //const wachtwoord = wachtwoordInput.value.trim();
+    
+    // Haal de waarde van het wachtwoord op en verwijder overtollige spaties
+    const wachtwoord = wachtwoordInput.value.trim();
+    
     const errorDiv = document.getElementById('error');
     
     // Log de volledige URL voor debugging
@@ -40,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Als de ingevoerde waarde overeenkomt, doorsturen naar de juiste vrijwilligerspagina
     if (wachtwoorden[ruimte] && wachtwoord === wachtwoorden[ruimte]) {
-      // Gebruik een absoluut pad als nodig, bijvoorbeeld: `/vrijwilliger-${ruimte}.html`
       window.location.href = `vrijwilliger-${ruimte}.html`;
     } else {
       // Foutmelding tonen
