@@ -11,18 +11,12 @@
   <div class="container">
     <img src="images/logo.png" alt="Sufuf Logo" class="logo">
     <h1>Vrijwilliger</h1>
-    <h2>Voer de pincode in om toegang te krijgen</h2>
-
-    <!-- Pincode invoer en knop -->
-    <div class="pincode-container">
-      <input id="pincode-input" class="pincode-input" type="tel" maxlength="4" placeholder="****" inputmode="numeric">
-      <button id="pincode-button" class="pincode-button">Inloggen</button>
-      <p id="error-msg" class="error-msg">Onjuiste pincode. Probeer opnieuw.</p>
+    <h2>Kies je ruimte</h2>
+    <div class="buttons">
+      <button onclick="window.location.href='/vrijwilliger-1ste-verdieping.html'">1ste verdieping</button>
+      <button onclick="window.location.href='/vrijwilliger-garage.html'">Garage</button>
     </div>
-
     <a href="/" class="back-button">Terug</a>
   </div>
-
-  <script src="vrijwilliger.js"></script> <!-- Voeg dit toe zodat de JS werkt -->
 </body>
 </html>
