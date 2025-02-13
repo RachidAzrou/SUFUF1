@@ -39,6 +39,7 @@ body {
 
 h1 {
   font-size: 4rem;
+  margin-top: 0px; /* is test*/
   margin-bottom: 10px; /* Verkleind van 20px naar 10px */
   color: #963E56;
   font-weight: 600;
@@ -47,6 +48,7 @@ h1 {
 h2 {
   font-size: 2.5rem;
   margin-bottom: 20px; /* Verkleind van 50px naar 20px */
+  margin-top: 0px; /* is test*/
   color: #D9A347;
   font-weight: 400;
 }
