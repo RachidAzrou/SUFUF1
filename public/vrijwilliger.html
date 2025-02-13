@@ -8,43 +8,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Pincode-overlay -->
-  <div id="pincode-screen" class="container">
+  <div class="container">
     <img src="images/logo.png" alt="Sufuf Logo" class="logo">
-    <h2>Voer je toegangscode in</h2>
-    <input type="password" id="pincode-input" placeholder="Pincode" maxlength="4" class="pincode-input">
-    <button class="pincode-button" onclick="checkPincode()">Toegang</button>
-    <p id="error-msg" class="error-msg">Foute pincode! Probeer opnieuw.</p>
-  </div>
+    <h1>Vrijwilliger</h1>
+    <h2>Voer de pincode in om toegang te krijgen</h2>
 
-  <!-- Bestaande inhoud -->
-  <div id="content" style="display: none;">
-    <div class="container">
-      <img src="images/logo.png" alt="Sufuf Logo" class="logo">
-      <h1>Vrijwilliger</h1>
-      <h2>Kies je ruimte</h2>
-      <div class="buttons">
-        <button onclick="window.location.href='/vrijwilliger-1ste-verdieping.html'">1ste verdieping</button>
-        <button onclick="window.location.href='/vrijwilliger-garage.html'">Garage</button>
-      </div>
-      <a href="/" class="back-button">Terug</a>
+    <!-- Pincode invoer en knop -->
+    <div class="pincode-container">
+      <input id="pincode-input" class="pincode-input" type="tel" maxlength="4" placeholder="****" inputmode="numeric">
+      <button id="pincode-button" class="pincode-button">Inloggen</button>
+      <p id="error-msg" class="error-msg">Onjuiste pincode. Probeer opnieuw.</p>
     </div>
+
+    <a href="/" class="back-button">Terug</a>
   </div>
 
-  <script>
-    const correctPincode = "1234";  // Pas dit aan naar een veilige code
-
-    function checkPincode() {
-      const input = document.getElementById("pincode-input").value;
-      const errorMsg = document.getElementById("error-msg");
-
-      if (input === correctPincode) {
-        document.getElementById("pincode-screen").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      } else {
-        errorMsg.style.display = "block";
-      }
-    }
-  </script>
+  <script src="vrijwilliger.js"></script> <!-- Voeg dit toe zodat de JS werkt -->
 </body>
 </html>
