@@ -4,6 +4,10 @@ const socket = io('https://sufuf-socketio-server.onrender.com');
 const okSwitch = document.getElementById('ok-switch');
 const nokSwitch = document.getElementById('nok-switch');
 
+// Debugging: Controleer of de schakelaars worden gevonden
+console.log('OK Switch:', okSwitch);
+console.log('NOK Switch:', nokSwitch);
+
 // Functie om het wachtwoord te controleren
 function controleerWachtwoord() {
   const ingevoerdWachtwoord = document.getElementById('wachtwoord').value;
@@ -11,15 +15,12 @@ function controleerWachtwoord() {
   const wachtwoordScherm = document.getElementById('wachtwoord-scherm');
   const ruimteScherm = document.getElementById('ruimte-scherm');
 
-  // Stel hier het gewenste wachtwoord in (bijvoorbeeld "1234")
-  const correctWachtwoord = "1234";
+  const correctWachtwoord = "1234"; // Stel hier het gewenste wachtwoord in
 
   if (ingevoerdWachtwoord === correctWachtwoord) {
-    // Wachtwoord is correct, toon het ruimtescherm
     wachtwoordScherm.style.display = 'none';
     ruimteScherm.style.display = 'block';
   } else {
-    // Wachtwoord is incorrect, toon foutmelding
     foutmelding.textContent = "Ongeldig wachtwoord. Probeer opnieuw.";
   }
 }
@@ -34,25 +35,9 @@ socket.on('initialStatus', (data) => {
   }
 });
 
-// Luister naar statusupdates
-socket.on('statusUpdated', (data) => {
-  console.log('Status update ontvangen:', data);
-  if (data.room === 'garage') {
-    if (data.status === 'green') {
-      okSwitch.checked = true;
-      nokSwitch.checked = false;
-    } else if (data.status === 'red') {
-      nokSwitch.checked = true;
-      okSwitch.checked = false;
-    } else {
-      okSwitch.checked = false;
-      nokSwitch.checked = false;
-    }
-  }
-});
-
 // Schakelaar voor OK
 okSwitch.addEventListener('change', (e) => {
+  console.log('OK Switch clicked:', e.target.checked);
   if (e.target.checked) {
     nokSwitch.checked = false;
     socket.emit('updateStatus', { room: 'garage', status: 'green' });
@@ -63,6 +48,7 @@ okSwitch.addEventListener('change', (e) => {
 
 // Schakelaar voor NOK
 nokSwitch.addEventListener('change', (e) => {
+  console.log('NOK Switch clicked:', e.target.checked);
   if (e.target.checked) {
     okSwitch.checked = false;
     socket.emit('updateStatus', { room: 'garage', status: 'red' });
