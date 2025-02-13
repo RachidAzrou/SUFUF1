@@ -17,7 +17,7 @@ body {
 .container {
   text-align: center;
   background-color: white;
-  padding: 40px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
@@ -28,135 +28,127 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; /* Voeg dit toe */
+  position: relative;
 }
 
 .logo {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
-  margin-bottom: 10px; /* Verkleind van 30px naar 10px */
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 4rem;
-  margin-top: 0px; /* is test*/
-  margin-bottom: 10px; /* Verkleind van 20px naar 10px */
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
   color: #963E56;
   font-weight: 600;
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px; /* Verkleind van 50px naar 20px */
-  margin-top: 0px; /* is test*/
-  color: #D9A347; /* Gele kleur voor ondertitels */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  margin-top: 0;
+  color: #D9A347;
   font-weight: 400;
 }
 
 .buttons {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px; /* Verkleind van 20px naar 10px */
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
 }
 
-/* Stijl voor alle knoppen (behalve de terug-knop) */
 button {
-  width: 200px; /* Vaste breedte voor alle knoppen */
-  height: 50px; /* Vaste hoogte voor alle knoppen */
-  margin: 10px; /* Ruimte tussen de knoppen */
-  font-size: 16px; /* Tekstgrootte */
-  border: none; /* Geen rand */
-  border-radius: 5px; /* Afgeronde hoeken */
-  background-color: #6BB85C; /* Groene achtergrondkleur */
-  color: white; /* Witte tekst */
-  cursor: pointer; /* Verander de muiscursor */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #6BB85C;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover-effect voor knoppen */
 button:hover {
-  background-color: #5aa34d; /* Donkerder groen bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
+  background-color: #5aa34d;
+  transform: scale(1.05);
 }
 
-/* Stijl voor de terug-knop */
 .back-button {
-  width: auto; /* Breedte aanpassen aan de inhoud */
-  padding: 10px 20px; /* Padding voor een betere uitstraling */
-  background-color: #963E56; /* Rode achtergrondkleur */
-  position: absolute; /* Positie relatief aan de container */
-  bottom: 20px; /* 20 pixels vanaf de onderkant van de container */
-  left: 20px; /* 20 pixels vanaf de linkerkant van de container */
-  text-decoration: none; /* Geen onderstreping */
-  color: white; /* Witte tekst */
-  border-radius: 5px; /* Afgeronde hoeken */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
-  z-index: 1000; /* Zorg ervoor dat de knop boven andere elementen ligt */
+  width: auto;
+  padding: 10px 20px;
+  background-color: #963E56;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
 }
 
-/* Hover-effect voor de terug-knop */
 .back-button:hover {
-  background-color: #7a3248; /* Donkerder rood bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
+  background-color: #7a3248;
+  transform: scale(1.05);
 }
 
 .status-container {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
-  margin-top: 20px; /* Verkleind van 40px naar 20px */
+  margin-top: 20px;
 }
 
 .status {
   text-align: center;
 }
 
-/* Modernere lichten */
 .light {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: grey;
   margin: 20px auto;
   transition: background-color 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  font-size: 3rem; /* Grootte van de symbolen */
+  font-size: 2rem;
 }
 
 .light.green {
-  background-color: #28a745; /* Groen licht */
+  background-color: #28a745;
 }
 
 .light.red {
-  background-color: #dc3545; /* Rood licht */
+  background-color: #dc3545;
 }
 
 .light.grey {
-  background-color: grey; /* Grijs licht */
+  background-color: grey;
 }
 
-/* Symbolen in de lichten */
-.light i {
-  color: white; /* Witte kleur voor de symbolen */
-  display: none; /* Verberg het symbool standaard */
-}
-
-/* Modernere schakelaars voor OK/NOK */
 .switch-container {
   display: flex;
-  gap: 30px;
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
   align-items: center;
-  margin-top: 20px; /* Verkleind van 40px naar 20px */
+  margin-top: 20px;
 }
 
 .switch-container label {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #333;
 }
@@ -164,8 +156,8 @@ button:hover {
 .switch {
   position: relative;
   display: inline-block;
-  width: 100px;
-  height: 50px;
+  width: 60px;
+  height: 34px;
 }
 
 .switch input {
@@ -183,34 +175,33 @@ button:hover {
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
-  border-radius: 50px;
+  border-radius: 34px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 40px;
-  width: 40px;
-  left: 5px;
-  bottom: 5px;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
   background-color: white;
   transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #28a745; /* Groen voor OK */
+  background-color: #28a745;
 }
 
 input:checked + .slider:before {
-  transform: translateX(50px);
+  transform: translateX(26px);
 }
 
 input:checked + .slider.nok {
-  background-color: #dc3545; /* Rood voor NOK */
+  background-color: #dc3545;
 }
 
-/* Stijlen voor het wachtwoordscherm */
 #wachtwoord-scherm {
   display: flex;
   flex-direction: column;
@@ -220,14 +211,14 @@ input:checked + .slider.nok {
 }
 
 #wachtwoord-scherm h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px; /* Ruimte onder de ondertitel */
-  color: #D9A347; /* Gele kleur voor de ondertitel */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #D9A347;
   font-weight: 400;
 }
 
 .wachtwoord-input {
-  width: 80%;
+  width: 100%;
   max-width: 300px;
   padding: 10px;
   font-size: 1rem;
@@ -237,11 +228,11 @@ input:checked + .slider.nok {
 }
 
 .wachtwoord-knop {
-  width: 80%;
+  width: 100%;
   max-width: 300px;
   padding: 10px;
   font-size: 1rem;
-  background-color: #6BB85C; /* Groene kleur zoals andere knoppen */
+  background-color: #6BB85C;
   color: white;
   border: none;
   border-radius: 5px;
@@ -250,7 +241,7 @@ input:checked + .slider.nok {
 }
 
 .wachtwoord-knop:hover {
-  background-color: #5aa34d; /* Donkerder groen bij hover */
+  background-color: #5aa34d;
   transform: scale(1.05);
 }
 
@@ -260,84 +251,71 @@ input:checked + .slider.nok {
   margin-top: 10px;
 }
 
-/* Stijlen voor het ruimtescherm */
 #ruimte-scherm {
-  display: none; /* Verborgen totdat het wachtwoord is ingevoerd */
+  display: none;
   margin-top: 20px;
 }
 
-/* Responsieve design voor kleinere schermen (mobiel) */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .container {
-    padding: 20px;
-    min-height: 90vh;
-    display: flex;
-    justify-content: center; /* Horizontaal centreren */
-    align-items: center; /* Verticaal centreren */
+    padding: 40px;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+    gap: 20px;
+    max-width: none;
   }
 
   button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    width: 90%; /* Zorg ervoor dat de knoppen schalen op mobiel */
+    width: 200px;
   }
 
   .logo {
-    width: 300px;
+    width: 400px;
   }
 
   .light {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    font-size: 3rem;
   }
 
   .switch {
-    width: 80px;
-    height: 40px;
+    width: 100px;
+    height: 50px;
   }
 
   .slider:before {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+    left: 5px;
+    bottom: 5px;
   }
 
   input:checked + .slider:before {
-    transform: translateX(40px);
+    transform: translateX(50px);
   }
 
-  /* Status-container (lichten) */
   .status-container {
-    flex-direction: column; /* Lichten staan onder elkaar op mobiel */
-    align-items: center; /* Centraal uitlijnen */
-    gap: 20px;
-    width: 100%; /* Volledige breedte */
-    max-width: none; /* Geen max breedte */
-    margin: 0 auto; /* Zorg ervoor dat de container in het midden van het scherm staat */
-    padding: 0; /* Geen padding voor centrering */
-  }
-
-  .status {
-    text-align: center;
-  }
-}
-
-/* Horizontale weergave van mobiele schermen (landscape) */
-@media (orientation: landscape) {
-  .status-container {
-    flex-direction: row; /* Lichten staan naast elkaar in landscape-modus */
-    justify-content: center; /* Centraal uitlijnen */
+    flex-direction: row;
     gap: 40px;
   }
 
-  .status {
-    text-align: center;
+  .switch-container {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .switch-container label {
+    font-size: 1.5rem;
   }
 }
