@@ -10,22 +10,33 @@
 <body>
   <div class="container">
     <img src="images/logo.png" alt="Sufuf Logo" class="logo">
-    <h1>1ste verdieping</h1>
-    <div class="switch-container">
-      <label for="ok-switch">OK</label>
-      <label class="switch">
-        <input type="checkbox" id="ok-switch">
-        <span class="slider"></span>
-      </label>
-      <label for="nok-switch">NOK</label>
-      <label class="switch">
-        <input type="checkbox" id="nok-switch">
-        <span class="slider nok"></span>
-      </label>
+    <h1>1ste Verdieping</h1>
+    
+    <!-- Wachtwoordveld -->
+    <div id="wachtwoord-scherm">
+      <input type="password" id="wachtwoord" placeholder="Voer wachtwoord in" class="wachtwoord-input">
+      <button onclick="controleerWachtwoord()" class="wachtwoord-knop">Verder</button>
+      <p id="foutmelding" class="foutmelding"></p>
     </div>
+
+    <!-- Schakelaars (verborgen totdat het wachtwoord is ingevoerd) -->
+    <div id="ruimte-scherm" style="display: none;">
+      <div class="switch-container">
+        <label for="ok-switch">OK</label>
+        <label class="switch">
+          <input type="checkbox" id="ok-switch">
+          <span class="slider"></span>
+        </label>
+        <label for="nok-switch">NOK</label>
+        <label class="switch">
+          <input type="checkbox" id="nok-switch">
+          <span class="slider nok"></span>
+        </label>
+      </div>
+    </div>
+
     <a href="/vrijwilliger.html" class="back-button">Terug</a>
   </div>
-  <script src="/socket.io/socket.io.js"></script>
   <script src="vrijwilliger-1ste-verdieping.js"></script>
 </body>
 </html>

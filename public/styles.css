@@ -210,6 +210,55 @@ input:checked + .slider.nok {
   background-color: #dc3545; /* Rood voor NOK */
 }
 
+/* Stijlen voor het wachtwoordscherm */
+#wachtwoord-scherm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.wachtwoord-input {
+  width: 80%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #963E56;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.wachtwoord-knop {
+  width: 80%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #963E56;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.wachtwoord-knop:hover {
+  background-color: #7a3248;
+  transform: scale(1.05);
+}
+
+.foutmelding {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Stijlen voor het ruimtescherm */
+#ruimte-scherm {
+  display: none; /* Verborgen totdat het wachtwoord is ingevoerd */
+  margin-top: 20px;
+}
+
 /* Responsieve design voor kleinere schermen (mobiel) */
 @media (max-width: 768px) {
   .container {
