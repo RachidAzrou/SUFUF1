@@ -4,6 +4,9 @@ document.getElementById('wachtwoordForm').addEventListener('submit', function (e
     const wachtwoord = document.getElementById('wachtwoord').value;
     const errorDiv = document.getElementById('error');
 
+    // Log de volledige URL om te controleren of we de juiste URL-parameters hebben
+    console.log("Volledige URL: ", window.location.href);
+
     // Haal de URL-parameter 'ruimte' op
     const urlParams = new URLSearchParams(window.location.search);
     const ruimte = urlParams.get('ruimte'); // Dit haalt de waarde op, bijvoorbeeld '1ste-verdieping' of 'garage'
