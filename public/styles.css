@@ -1,11 +1,7 @@
 /* Algemene stijlen */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, rgba(245, 247, 250, 0.9), rgba(195, 207, 226, 0.9)), url('images/5540822.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
   display: flex;
@@ -28,25 +24,24 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; /* Voeg dit toe */
 }
 
 .logo {
   width: 400px;
   height: auto;
-  margin-bottom: 10px; /* Verkleind van 30px naar 10px */
+  margin-bottom: 30px;
 }
 
 h1 {
   font-size: 4rem;
-  margin-bottom: 10px; /* Verkleind van 20px naar 10px */
+  margin-bottom: 20px;
   color: #963E56;
   font-weight: 600;
 }
 
 h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px; /* Verkleind van 50px naar 20px */
+  margin-bottom: 50px;
   color: #D9A347;
   font-weight: 400;
 }
@@ -56,55 +51,30 @@ h2 {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 10px; /* Verkleind van 20px naar 10px */
+  margin-top: 20px;
 }
 
-/* Stijl voor alle knoppen (behalve de terug-knop) */
 button {
-  width: 200px; /* Vaste breedte voor alle knoppen */
-  height: 50px; /* Vaste hoogte voor alle knoppen */
-  margin: 10px; /* Ruimte tussen de knoppen */
-  font-size: 16px; /* Tekstgrootte */
-  border: none; /* Geen rand */
-  border-radius: 5px; /* Afgeronde hoeken */
-  background-color: #6BB85C; /* Groene achtergrondkleur */
-  color: white; /* Witte tekst */
-  cursor: pointer; /* Verander de muiscursor */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #6BB85C;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover-effect voor knoppen */
 button:hover {
-  background-color: #5aa34d; /* Donkerder groen bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
-}
-
-/* Stijl voor de terug-knop */
-.back-button {
-  width: auto; /* Breedte aanpassen aan de inhoud */
-  padding: 10px 20px; /* Padding voor een betere uitstraling */
-  background-color: #963E56; /* Rode achtergrondkleur */
-  position: absolute; /* Positie relatief aan de container */
-  bottom: 20px; /* 20 pixels vanaf de onderkant van de container */
-  left: 20px; /* 20 pixels vanaf de linkerkant van de container */
-  text-decoration: none; /* Geen onderstreping */
-  color: white; /* Witte tekst */
-  border-radius: 5px; /* Afgeronde hoeken */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
-  z-index: 1000; /* Zorg ervoor dat de knop boven andere elementen ligt */
-}
-
-/* Hover-effect voor de terug-knop */
-.back-button:hover {
-  background-color: #7a3248; /* Donkerder rood bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
+  background-color: #5aa34d;
+  transform: scale(1.05);
 }
 
 .status-container {
   display: flex;
   gap: 40px;
   justify-content: center;
-  margin-top: 20px; /* Verkleind van 40px naar 20px */
+  margin-top: 40px;
 }
 
 .status {
@@ -144,13 +114,32 @@ button:hover {
   display: none; /* Verberg het symbool standaard */
 }
 
+/* Mooiere terugknop */
+.back-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #963E56;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #7a3248;
+  transform: scale(1.05);
+}
+
 /* Modernere schakelaars voor OK/NOK */
 .switch-container {
   display: flex;
   gap: 30px;
   justify-content: center;
   align-items: center;
-  margin-top: 20px; /* Verkleind van 40px naar 20px */
+  margin-top: 40px;
 }
 
 .switch-container label {
@@ -208,72 +197,9 @@ input:checked + .slider.nok {
   background-color: #dc3545; /* Rood voor NOK */
 }
 
-/* Specifieke stijlen voor het wachtwoordscherm */
-body.wachtwoord-scherm .container {
-  width: 90%;
-  max-width: 500px; /* Verklein de maximale breedte van de container voor dit scherm */
-  min-height: 70vh; /* Maak de container iets groter */
-  padding: 50px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Positie relatief voor de terugknop */
-}
-
-body.wachtwoord-scherm input {
-  width: 100%; /* Zorg ervoor dat het invoerveld de volledige breedte benut */
-  padding: 20px; /* Vergroot het invoerveld */
-  font-size: 1.2rem;
-  margin-bottom: 30px; /* Ruimte tussen het wachtwoordveld en de knop */
-  border-radius: 5px; /* Afronden van de hoeken */
-  border: 1px solid #ccc; /* Rand toevoegen voor het invoerveld */
-}
-
-body.wachtwoord-scherm button {
-  width: 100%; /* Maak de knop de volledige breedte van het formulier */
-  padding: 12px; /* Kleinere padding voor de knop */
-  font-size: 1.2rem;
-  border-radius: 5px;
-  background-color: #6BB85C;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-body.wachtwoord-scherm button:hover {
-  background-color: #5aa34d; /* Donkerder groen bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
-}
-
-body.wachtwoord-scherm .back-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #963E56;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 20px; /* Ruimte tussen de knop en andere elementen */
-  font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-body.wachtwoord-scherm .back-button:hover {
-  background-color: #7a3248; /* Donkerder rood bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
-}
-
-body.wachtwoord-scherm #error {
-  color: red;
-  margin-top: 20px; /* Ruimte tussen foutmelding en andere elementen */
-}
-
 /* Responsieve design voor kleinere schermen (mobiel) */
 @media (max-width: 768px) {
-  body.wachtwoord-scherm .container {
+  .container {
     padding: 20px;
     min-height: 90vh;
     display: flex;
@@ -281,24 +207,68 @@ body.wachtwoord-scherm #error {
     align-items: center; /* Verticaal centreren */
   }
 
-  body.wachtwoord-scherm input {
-    padding: 15px; /* Kleinere padding voor mobiel */
-    font-size: 1.1rem;
+  h1 {
+    font-size: 3rem;
   }
 
-  body.wachtwoord-scherm button {
+  h2 {
+    font-size: 2rem;
+  }
+
+  button {
     padding: 15px 30px;
     font-size: 1.2rem;
-    width: 90%; /* Knoppen schalen voor mobiel */
+    width: 90%; /* Zorg ervoor dat de knoppen schalen op mobiel */
   }
 
-  body.wachtwoord-scherm .back-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    width: auto;
+  .logo {
+    width: 300px;
   }
 
-  body.wachtwoord-scherm .logo {
-    width: 250px; /* Kleinere logo voor mobiel */
+  .light {
+    width: 100px;
+    height: 100px;
+  }
+
+  .switch {
+    width: 80px;
+    height: 40px;
+  }
+
+  .slider:before {
+    height: 30px;
+    width: 30px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(40px);
+  }
+
+  /* Status-container (lichten) */
+  .status-container {
+    flex-direction: column; /* Lichten staan onder elkaar op mobiel */
+    align-items: center; /* Centraal uitlijnen */
+    gap: 20px;
+    width: 100%; /* Volledige breedte */
+    max-width: none; /* Geen max breedte */
+    margin: 0 auto; /* Zorg ervoor dat de container in het midden van het scherm staat */
+    padding: 0; /* Geen padding voor centrering */
+  }
+
+  .status {
+    text-align: center;
+  }
+}
+
+/* Horizontale weergave van mobiele schermen (landscape) */
+@media (orientation: landscape) {
+  .status-container {
+    flex-direction: row; /* Lichten staan naast elkaar in landscape-modus */
+    justify-content: center; /* Centraal uitlijnen */
+    gap: 40px;
+  }
+
+  .status {
+    text-align: center;
   }
 }
