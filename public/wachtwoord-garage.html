@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wachtwoord</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Je bestaande CSS-styles -->
+</head>
+<body class="wachtwoord-scherm">
+    <div class="container">
+        <img src="images/logo.png" class="logo" alt="Logo"> <!-- Voeg hier je logo toe als je dat wilt -->
+        <h2>Wachtwoord</h2>
+        <form id="wachtwoordForm">
+            <input type="password" id="wachtwoord" placeholder="******" required>
+            <div class="button-container">
+                <button type="submit">Bevestig</button>
+            </div>
+        </form>
+        <div id="error" style="color: red; display: none;">Fout wachtwoord! Probeer het opnieuw.</div>
+    </div>
+
+    <script src="wachtwoord.js"></script>
+</body>
+</html>

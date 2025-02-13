@@ -6,13 +6,15 @@
     <title>Wachtwoord</title>
     <link rel="stylesheet" href="styles.css"> <!-- Je bestaande CSS-styles -->
 </head>
-<body>
+<body class="wachtwoord-scherm">
     <div class="container">
         <img src="images/logo.png" class="logo" alt="Logo"> <!-- Voeg hier je logo toe als je dat wilt -->
-        <h2>Voer wachtwoord in om door te gaan</h2>
+        <h2>Wachtwoord</h2>
         <form id="wachtwoordForm">
-            <input type="password" id="wachtwoord" placeholder="Wachtwoord" required>
-            <button type="submit">Bevestig</button>
+            <input type="password" id="wachtwoord" placeholder="******" required>
+            <div class="button-container">
+                <button type="submit">Bevestig</button>
+            </div>
         </form>
         <div id="error" style="color: red; display: none;">Fout wachtwoord! Probeer het opnieuw.</div>
     </div>

@@ -7,7 +7,7 @@ document.getElementById('wachtwoordForm').addEventListener('submit', function (e
 
     if (wachtwoord === correcteWachtwoord) {
         // Wachtwoord klopt, stuur door naar het juiste scherm
-        window.location.href = 'vrijwilliger.html';  // Pas dit aan naar het gewenste vrijwilligersscherm
+        window.location.href = 'vrijwilliger-garage.html';  // Pas dit aan naar het gewenste vrijwilligersscherm
     } else {
         // Wachtwoord is fout
         errorDiv.style.display = 'block';
