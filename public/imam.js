@@ -5,6 +5,8 @@ const socket = io('https://sufuf-socketio-server.onrender.com'); // Vervang dit 
 socket.on('initialStatus', (data) => {
   updateLight('first-floor', data['first-floor']);
   updateLight('garage', data['garage']);
+  updateLight('beneden', data['beneden']); // Nieuw toegevoegd
+  updateLight('vrouwen', data['vrouwen']); // Nieuw toegevoegd
 });
 
 // Luister naar statusupdates

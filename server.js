@@ -22,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 let status = {
   'first-floor': 'OFF', // Standaardstatus
   'garage': 'OFF', // Standaardstatus
+  'beneden': 'OFF', // nieuwe ruimte
+  'vrouwen': 'OFF', // nieuwe ruimte
 };
 
 // WebSocket-communicatie
