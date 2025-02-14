@@ -6,6 +6,9 @@
   <title>Sufuf</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Voeg het manifest bestand toe -->
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <div class="container">
@@ -17,5 +20,18 @@
       <button onclick="window.location.href='/vrijwilliger.html'">Vrijwilliger</button>
     </div>
   </div>
+
+  <!-- Registreer de service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker geregistreerd met succes:', registration);
+        })
+        .catch((error) => {
+          console.log('Fout bij het registreren van de Service Worker:', error);
+        });
+    }
+  </script>
 </body>
 </html>
