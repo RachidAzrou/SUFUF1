@@ -86,8 +86,8 @@ button:hover {
   background-color: #963E56; /* Rode achtergrondkleur */
   position: absolute; /* Positie relatief aan de container */
   bottom: 20px; /* 20 pixels vanaf de onderkant van de container */
-  left: 50px; /* 50 pixels vanaf de linkerkant van de container */
-  transform:translateX(-50%);/*nieuw toevoeging voor te centreren int midden
+  left: 50%; /* 50 % vanaf de linkerkant van de container */
+  transform:translateX(-50%);/*nieuw toevoeging voor te centreren int midden */
   text-decoration: none; /* Geen onderstreping */
   color: white; /* Witte tekst */
   border-radius: 5px; /* Afgeronde hoeken */
