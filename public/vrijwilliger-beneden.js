@@ -1,8 +1,8 @@
 // Verbind met de externe Socket.IO-server
 const socket = io('https://sufuf-socketio-server.onrender.com'); // Vervang dit door de URL van je Render-server
 
-const okSwitch = document.getElementById('ok-beneden');
-const nokSwitch = document.getElementById('nok-beneden');
+const okSwitch = document.getElementById('ok-switch');
+const nokSwitch = document.getElementById('nok-switch');
 
 // Laad de opgeslagen status bij het openen van de pagina
 socket.on('initialStatus', (data) => {
