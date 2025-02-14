@@ -11,7 +11,7 @@ const server = http.createServer(app);
 // WebSocket-server configuratie met CORS
 const io = new Server(server, {
   cors: {
-    origin: ["https://sufuf-app.vercel.app"], // Voeg je frontend-domeinen toe
+    origin: ["https://sufuf-app.vercel.app"], // Vervang dit met je Vercel front-end URL
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
     credentials: true,
@@ -27,7 +27,7 @@ app.use(session({
   secret: 'sufuf-secret-key', // Verander dit naar een sterke geheime sleutel
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true } // Voor development zonder HTTPS; verander naar true voor productie
+  cookie: { secure: false } // Zet naar true voor productie als je HTTPS gebruikt
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -38,7 +38,7 @@ let status = {
   'garage': 'OFF', // Standaardstatus
 };
 
-// Fake wachtwoorden voor demonstratie
+// Fake gebruikers voor demonstratie
 const users = {
   'vrijwilliger1': 'wachtwoord123',
   'vrijwilliger2': 'wachtwoord456',
