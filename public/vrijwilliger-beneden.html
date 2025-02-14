@@ -12,14 +12,14 @@
     <img src="images/logo.png" alt="Sufuf Logo" class="logo">
     <h1>Beneden</h1>
     <div class="switch-container">
-      <label for="ok-switch">OK</label>
+      <label for="ok-beneden">OK</label>
       <label class="switch">
-        <input type="checkbox" id="ok-switch">
+        <input type="checkbox" id="ok-beneden"> <!-- ID aangepast -->
         <span class="slider"></span>
       </label>
-      <label for="nok-switch">NOK</label>
+      <label for="nok-beneden">NOK</label>
       <label class="switch">
-        <input type="checkbox" id="nok-switch">
+        <input type="checkbox" id="nok-beneden"> <!-- ID aangepast -->
         <span class="slider nok"></span>
       </label>
     </div>
@@ -27,4 +27,10 @@
     <!-- Terug-knop wordt nu binnen dezelfde container, maar als laatste element geplaatst -->
     <div class="buttons">
       <a href="/vrijwilliger.html" class="back-button">Terug</a>
-  
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="vrijwilliger-beneden.js"></script>
+</body>
+</html>
