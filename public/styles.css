@@ -84,15 +84,23 @@ button:hover {
   width: auto; /* Breedte aanpassen aan de inhoud */
   padding: 10px 20px; /* Padding voor een betere uitstraling */
   background-color: #963E56; /* Rode achtergrondkleur */
-  position: absolute; /* Positie relatief aan de container */
-  bottom: 10px; /* 20 pixels vanaf de onderkant van de container */
-  left: 50%; /* 50 % vanaf de linkerkant van de container */
-  transform:translateX(-50%);/*nieuw toevoeging voor te centreren int midden */
   text-decoration: none; /* Geen onderstreping */
   color: white; /* Witte tekst */
   border-radius: 5px; /* Afgeronde hoeken */
   transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
   z-index: 1000; /* Zorg ervoor dat de knop boven andere elementen ligt */
+  margin-top: 20px; /* Ruimte boven de knop om deze onder de knoppen te plaatsen */
+  text-align: center; /* Tekst centreren */
+}
+
+/* Container aanpassen voor flexibele lay-out */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontaal centreren */
+  justify-content: center; /* Verticaal centreren */
+  min-height: 100vh; /* Volledige hoogte van het scherm */
+  padding: 20px; /* Padding voor ademruimte */
 }
 
 /* Hover-effect voor de terug-knop */
