@@ -13,19 +13,6 @@ socket.on('initialStatus', (data) => {
   }
 });
 
-// Controleer of de gebruiker is ingelogd voordat de schakelaars werken
-fetch('/check-login', { method: 'GET', credentials: 'same-origin' })
-  .then((response) => {
-    if (!response.ok) {
-      window.location.href = '/login.html'; // Redirect naar loginpagina als de gebruiker niet is ingelogd
-    }
-  })
-  .catch((error) => {
-    console.error('Error bij sessiecontrole:', error);
-    window.location.href = '/login.html'; // Redirect naar loginpagina bij error
-  });
-
-// Eventlisteners voor de OK en NOK schakelaars
 okSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
     nokSwitch.checked = false;
