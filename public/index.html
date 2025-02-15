@@ -1,9 +1,3 @@
-<script>
-  // Controleer of de gebruiker is ingelogd
-  if (!localStorage.getItem('isLoggedIn')) {
-    window.location.href = '/login.html'; // Stuur door naar de login-pagina als niet ingelogd
-  }
-</script>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -17,9 +11,6 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div class="logout-button">
-  <button onclick="logout()">Afmelden</button>
-</div>
   <div class="container">
     <img src="images/logo.png" alt="Sufuf Logo" class="logo">
     <h1>SUFUF</h1>
@@ -42,17 +33,5 @@
         });
     }
   </script>
-  <script>
-  function logout() {
-    localStorage.removeItem('isLoggedIn'); // Verwijder de login-status
-    window.location.href = '/login.html'; // Stuur door naar de login-pagina
-  }
-
-  // Controleer of de gebruiker is ingelogd
-  if (!localStorage.getItem('isLoggedIn')) {
-    window.location.href = '/login.html'; // Stuur door naar de login-pagina als niet ingelogd
-  }
-</script>
-
 </body>
 </html>
