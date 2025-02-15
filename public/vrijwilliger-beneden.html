@@ -1,3 +1,9 @@
+<script>
+  // Controleer of de gebruiker is ingelogd
+  if (!localStorage.getItem('isLoggedIn')) {
+    window.location.href = '/login.html'; // Stuur door naar de login-pagina als niet ingelogd
+  }
+</script>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
