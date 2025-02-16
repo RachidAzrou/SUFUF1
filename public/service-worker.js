@@ -1,4 +1,4 @@
-const cacheName = 'sufuf-app-cache-v3.2'; // Zorg ervoor dat deze versie altijd wordt verhoogd wanneer je nieuwe veranderingen uitbrengt
+const cacheName = 'sufuf-app-cache-v3.3'; // Zorg ervoor dat deze versie altijd wordt verhoogd wanneer je nieuwe veranderingen uitbrengt
 const assets = [
   '/',
   '/index.html',

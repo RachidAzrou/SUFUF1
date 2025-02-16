@@ -3,7 +3,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
   const password = document.getElementById('password').value;
 
   // Hardcoded password en versienummer
-  const correctPassword = 'mefen2020'; // Nieuw wachtwoord
+  const correctPassword = 'MEFEN2020'; // Nieuw wachtwoord
   const passwordVersion = '3'; // Versienummer (verhoog dit bij wachtwoordwijziging)
 
   if (password === correctPassword) {
