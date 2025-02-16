@@ -2,12 +2,14 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
   e.preventDefault();
   const password = document.getElementById('password').value;
 
-  // Hardcoded password (replace with a secure method in production)
-  const correctPassword = 'moskee123'; // Change this to your desired password
+  // Hardcoded password en versienummer
+  const correctPassword = 'nieuwWachtwoord123'; // Nieuw wachtwoord
+  const passwordVersion = '2'; // Versienummer (verhoog dit bij wachtwoordwijziging)
 
   if (password === correctPassword) {
-    // Store login state in sessionStorage
+    // Store login state and password version in sessionStorage
     sessionStorage.setItem('loggedIn', 'true');
+    sessionStorage.setItem('passwordVersion', passwordVersion); // Sla het versienummer op
     // Redirect to the volunteer page (vrijwilliger.html)
     window.location.href = '/vrijwilliger.html';
   } else {

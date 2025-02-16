@@ -8,13 +8,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <script>
-    // Check if the user is logged in
-    if (sessionStorage.getItem('loggedIn') !== 'true') {
-      window.location.href = '/login.html'; // Redirect to login if not logged in
-    }
-  </script>
-
   <div class="container">
     <img src="images/logo.png" alt="Sufuf Logo" class="logo">
     <h1>Vrijwilliger</h1>
@@ -32,11 +25,29 @@
     </div>
   </div>
 
-  <!-- Logout Script -->
+  <!-- Voeg de JavaScript-code hier toe -->
   <script>
+    // Controleer of de gebruiker is ingelogd
+    if (sessionStorage.getItem('loggedIn') !== 'true') {
+      window.location.href = '/login.html'; // Redirect naar login als niet ingelogd
+    }
+
+    // Controleer of het versienummer overeenkomt
+    const currentPasswordVersion = '2'; // Huidige versienummer
+    const storedPasswordVersion = sessionStorage.getItem('passwordVersion');
+
+    if (storedPasswordVersion !== currentPasswordVersion) {
+      // Als het versienummer niet overeenkomt, log de gebruiker uit
+      sessionStorage.removeItem('loggedIn');
+      sessionStorage.removeItem('passwordVersion');
+      window.location.href = '/login.html'; // Stuur de gebruiker naar de login-pagina
+    }
+
+    // Logout functie
     function logout() {
       // Clear the login state from sessionStorage
       sessionStorage.removeItem('loggedIn');
+      sessionStorage.removeItem('passwordVersion');
       // Redirect to the login page
       window.location.href = '/login.html';
     }
