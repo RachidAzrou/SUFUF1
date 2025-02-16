@@ -6,6 +6,39 @@
   <title>Vrijwilliger - Sufuf</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Media query voor mobiele schermen */
+    @media (max-width: 767px) {
+      .bottom-buttons {
+        display: flex;
+        flex-direction: column; /* Zet de knoppen onder elkaar */
+        align-items: center; /* Centreer de knoppen */
+        gap: 10px; /* Voeg wat ruimte tussen de knoppen toe */
+      }
+
+      .logout-button, .back-button {
+        width: 100%; /* Maak de knoppen even breed */
+        max-width: 300px; /* Max breedte voor knoppen */
+        padding: 12px 0; /* Meer padding voor grotere knoppen */
+        font-size: 1.2rem; /* Vergroot de tekst */
+      }
+    }
+
+    /* Voor grotere schermen, zoals desktops, blijven de knoppen horizontaal en groot */
+    @media (min-width: 768px) {
+      .bottom-buttons {
+        flex-direction: row; /* Zet de knoppen naast elkaar */
+        justify-content: center; /* Centreer de knoppen horizontaal */
+      }
+
+      .logout-button, .back-button {
+        width: auto; /* Terug naar de standaard breedte */
+        max-width: none; /* Verwijder de max breedte */
+        padding: 10px 20px; /* Terug naar kleinere padding voor desktop */
+        font-size: 1rem; /* Standaard tekstgrootte */
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -25,7 +58,6 @@
     </div>
   </div>
 
-  <!-- Voeg de JavaScript-code hier toe -->
   <script>
     // Controleer of de gebruiker is ingelogd
     if (sessionStorage.getItem('loggedIn') !== 'true') {
