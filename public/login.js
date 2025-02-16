@@ -4,7 +4,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
 
   // Hardcoded password en versienummer
   const correctPassword = 'mefen2020'; // Nieuw wachtwoord
-  const passwordVersion = '1'; // Versienummer (verhoog dit bij wachtwoordwijziging)
+  const passwordVersion = '3'; // Versienummer (verhoog dit bij wachtwoordwijziging)
 
   if (password === correctPassword) {
     // Store login state and password version in sessionStorage
