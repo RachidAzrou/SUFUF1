@@ -6,7 +6,6 @@
   <title>Sufuf</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <!-- Voeg het manifest bestand toe -->
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
@@ -15,19 +14,37 @@
     <h1>SUFUF</h1>
     <h2>Kies je rol</h2>
     <div class="buttons">
-      <!-- Imam-knop: direct toegang -->
       <button onclick="window.location.href='/imam.html'">Imam</button>
-      <!-- Vrijwilliger-knop: controleer of de gebruiker al is ingelogd -->
       <button onclick="checkLogin()">Vrijwilliger</button>
     </div>
   </div>
 
-  <!-- Registreer de service worker -->
+  <!-- Update melding -->
+  <div id="update-notification">
+    Een nieuwe versie is beschikbaar. <button id="reload-button">Vernieuwen</button>
+  </div>
+
   <script>
+    // Registreer de service worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js')
         .then((registration) => {
           console.log('Service Worker geregistreerd met succes:', registration);
+
+          // Luister naar updates
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                // Toon de update-melding
+                document.getElementById('update-notification').style.display = 'block';
+                document.getElementById('reload-button').addEventListener('click', () => {
+                  newWorker.postMessage({ action: 'skipWaiting' });
+                  window.location.reload(); // Vernieuw de pagina
+                });
+              }
+            });
+          });
         })
         .catch((error) => {
           console.log('Fout bij het registreren van de Service Worker:', error);
@@ -37,10 +54,8 @@
     // Functie om te controleren of de gebruiker al is ingelogd
     function checkLogin() {
       if (sessionStorage.getItem('loggedIn') === 'true') {
-        // Als de gebruiker al is ingelogd, ga direct naar vrijwilliger.html
         window.location.href = '/vrijwilliger.html';
       } else {
-        // Anders, ga naar de login-pagina
         window.location.href = '/login.html';
       }
     }
