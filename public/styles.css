@@ -51,6 +51,14 @@ h2 {
   font-weight: 400;
 }
 
+/* Stijl voor de goudkleurige titel in het login-scherm */
+.gold-title {
+  font-size: 2.5rem; /* Gelijk aan de h2-stijl */
+  color: #D9A347; /* Goudkleur */
+  font-weight: 400; /* Gelijk aan de h2-stijl */
+  margin-bottom: 20px; /* Gelijk aan de h2-stijl */
+}
+
 .buttons {
   display: flex;
   gap: 20px;
@@ -79,36 +87,27 @@ button:hover {
   transform: scale(1.05); /* Licht vergroten bij hover */
 }
 
-/* Stijl voor de terug-knop */
+/* Stijl voor de terugknop */
 .back-button {
   width: auto; /* Breedte aanpassen aan de inhoud */
-  padding: 10px 20px; /* Padding voor een betere uitstraling */
+  padding: 8px 16px; /* Kleinere padding */
   background-color: #963E56; /* Rode achtergrondkleur */
   text-decoration: none; /* Geen onderstreping */
   color: white; /* Witte tekst */
   border-radius: 5px; /* Afgeronde hoeken */
   transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
-  z-index: 1000; /* Zorg ervoor dat de knop boven andere elementen ligt */
-  margin-top: 20px; /* Ruimte boven de knop om deze onder de knoppen te plaatsen */
   text-align: center; /* Tekst centreren */
+  font-size: 14px; /* Kleinere tekst */
+  margin-top: 20px; /* Ruimte boven de knop */
 }
 
-/* Container aanpassen voor flexibele lay-out */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Horizontaal centreren */
-  justify-content: center; /* Verticaal centreren */
-  min-height: 100vh; /* Volledige hoogte van het scherm */
-  padding: 20px; /* Padding voor ademruimte */
-}
-
-/* Hover-effect voor de terug-knop */
+/* Hover-effect voor de terugknop */
 .back-button:hover {
   background-color: #7a3248; /* Donkerder rood bij hover */
   transform: scale(1.05); /* Licht vergroten bij hover */
 }
 
+/* Status-container voor de lichten */
 .status-container {
   display: flex;
   gap: 40px;
@@ -153,7 +152,90 @@ button:hover {
   display: none; /* Verberg het symbool standaard */
 }
 
-/* Modernere schakelaars voor OK/NOK */
+/* Bottom Buttons Container */
+.bottom-buttons {
+  display: flex;
+  gap: 10px; /* Ruimte tussen de knoppen */
+  margin-top: 20px; /* Ruimte boven de knoppen */
+  justify-content: flex-start; /* Zet knoppen aan de linkerkant */
+}
+
+/* Logout Button Styling (Afmelden knop) */
+.logout-button {
+  width: auto; /* Breedte aanpassen aan de inhoud */
+  padding: 8px 16px; /* Kleinere padding */
+  background-color: #963E56; /* Rode achtergrondkleur */
+  text-decoration: none; /* Geen onderstreping */
+  color: white; /* Witte tekst */
+  border-radius: 5px; /* Afgeronde hoeken */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
+  text-align: center; /* Tekst centreren */
+  cursor: pointer; /* Verander de muiscursor */
+  border: none; /* Geen rand */
+  font-size: 14px; /* Kleinere tekst */
+}
+
+/* Hover-effect voor de logout-knop */
+.logout-button:hover {
+  background-color: #7a3248; /* Donkerder rood bij hover */
+  transform: scale(1.05); /* Licht vergroten bij hover */
+}
+
+/* Media query voor grotere schermen (tablets, desktops, monitoren) */
+@media (min-width: 768px) {
+  .logout-button {
+    position: absolute; /* Positioneer de afmeldknop absoluut */
+    top: 20px; /* Afstand vanaf de bovenkant */
+    right: 20px; /* Afstand vanaf de rechterkant */
+  }
+
+  .bottom-buttons {
+    justify-content: flex-start; /* Zet de terugknop aan de linkerkant */
+  }
+}
+
+/* Media query voor kleinere schermen (mobiele telefoons) */
+@media (max-width: 767px) {
+  .logout-button {
+    position: static; /* Standaard positie (onder de terugknop) */
+  }
+
+  .bottom-buttons {
+    flex-direction: column; /* Zet knoppen onder elkaar */
+    align-items: flex-start; /* Uitlijnen aan de linkerkant */
+  }
+}
+
+/* Login Form Styling */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#login-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#login-form button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #6BB85C;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#login-form button:hover {
+  background-color: #5aa34d;
+}
+
+/* Vrijwilliger Knoppen Styling */
 .switch-container {
   display: flex;
   gap: 30px;
@@ -215,80 +297,4 @@ input:checked + .slider:before {
 
 input:checked + .slider.nok {
   background-color: #dc3545; /* Rood voor NOK */
-}
-
-/* Responsieve design voor kleinere schermen (mobiel) */
-@media (max-width: 768px) {
-  .container {
-    padding: 20px;
-    min-height: 90vh;
-    display: flex;
-    justify-content: center; /* Horizontaal centreren */
-    align-items: center; /* Verticaal centreren */
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    width: 90%; /* Zorg ervoor dat de knoppen schalen op mobiel */
-  }
-
-  .logo {
-    width: 300px;
-  }
-
-  .light {
-    width: 100px;
-    height: 100px;
-  }
-
-  .switch {
-    width: 80px;
-    height: 40px;
-  }
-
-  .slider:before {
-    height: 30px;
-    width: 30px;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(40px);
-  }
-
-  /* Status-container (lichten) */
-  .status-container {
-    flex-direction: column; /* Lichten staan onder elkaar op mobiel */
-    align-items: center; /* Centraal uitlijnen */
-    gap: 20px;
-    width: 100%; /* Volledige breedte */
-    max-width: none; /* Geen max breedte */
-    margin: 0 auto; /* Zorg ervoor dat de container in het midden van het scherm staat */
-    padding: 0; /* Geen padding voor centrering */
-  }
-
-  .status {
-    text-align: center;
-  }
-}
-
-/* Horizontale weergave van mobiele schermen (landscape) */
-@media (orientation: landscape) {
-  .status-container {
-    flex-direction: row; /* Lichten staan naast elkaar in landscape-modus */
-    justify-content: center; /* Centraal uitlijnen */
-    gap: 40px;
-  }
-
-  .status {
-    text-align: center;
-  }
 }

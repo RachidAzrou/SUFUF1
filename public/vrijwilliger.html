@@ -8,17 +8,38 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <script>
+    // Check if the user is logged in
+    if (sessionStorage.getItem('loggedIn') !== 'true') {
+      window.location.href = '/login.html'; // Redirect to login if not logged in
+    }
+  </script>
+
   <div class="container">
     <img src="images/logo.png" alt="Sufuf Logo" class="logo">
     <h1>Vrijwilliger</h1>
     <h2>Kies je ruimte</h2>
     <div class="buttons">
       <button onclick="window.location.href='/vrijwilliger-1ste-verdieping.html'">Boven</button>
-      <button onclick="window.location.href='/vrijwilliger-beneden.html'">Beneden</button> <!-- Nieuw toegevoegd -->
+      <button onclick="window.location.href='/vrijwilliger-beneden.html'">Beneden</button>
       <button onclick="window.location.href='/vrijwilliger-garage.html'">Garage</button>
-      <button onclick="window.location.href='/vrijwilliger-vrouwen.html'">Vrouwen</button> <!-- Nieuw toegevoegd -->
+      <button onclick="window.location.href='/vrijwilliger-vrouwen.html'">Vrouwen</button>
     </div>
-    <a href="/" class="back-button">Terug</a>
+    <!-- Terugknop en Afmelden knop -->
+    <div class="bottom-buttons">
+      <a href="/" class="back-button">Terug</a>
+      <button onclick="logout()" class="logout-button">Afmelden</button>
+    </div>
   </div>
+
+  <!-- Logout Script -->
+  <script>
+    function logout() {
+      // Clear the login state from sessionStorage
+      sessionStorage.removeItem('loggedIn');
+      // Redirect to the login page
+      window.location.href = '/login.html';
+    }
+  </script>
 </body>
 </html>
