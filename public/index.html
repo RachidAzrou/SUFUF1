@@ -17,8 +17,8 @@
     <div class="buttons">
       <!-- Imam-knop: direct toegang -->
       <button onclick="window.location.href='/imam.html'">Imam</button>
-      <!-- Vrijwilliger-knop: redirect naar login-pagina -->
-      <button onclick="window.location.href='/login.html'">Vrijwilliger</button>
+      <!-- Vrijwilliger-knop: controleer of de gebruiker al is ingelogd -->
+      <button onclick="checkLogin()">Vrijwilliger</button>
     </div>
   </div>
 
@@ -32,6 +32,17 @@
         .catch((error) => {
           console.log('Fout bij het registreren van de Service Worker:', error);
         });
+    }
+
+    // Functie om te controleren of de gebruiker al is ingelogd
+    function checkLogin() {
+      if (sessionStorage.getItem('loggedIn') === 'true') {
+        // Als de gebruiker al is ingelogd, ga direct naar vrijwilliger.html
+        window.location.href = '/vrijwilliger.html';
+      } else {
+        // Anders, ga naar de login-pagina
+        window.location.href = '/login.html';
+      }
     }
   </script>
 </body>

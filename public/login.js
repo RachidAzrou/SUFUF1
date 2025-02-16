@@ -6,7 +6,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
   const correctPassword = 'moskee123'; // Change this to your desired password
 
   if (password === correctPassword) {
-    // Store login state in session storage
+    // Store login state in sessionStorage
     sessionStorage.setItem('loggedIn', 'true');
     // Redirect to the volunteer page (vrijwilliger.html)
     window.location.href = '/vrijwilliger.html';
