@@ -1,49 +1,52 @@
-// Verbind met de externe Socket.IO-server
-const socket = io('https://sufuf-socketio-server.onrender.com'); // Vervang door je eigen server-URL indien nodig
+const socket = io('https://sufuf-socketio-server.onrender.com'); // Pas aan indien nodig
 
-// Luister naar de initiële status en update de UI
+// Luister naar de initiële status
 socket.on('initialStatus', (data) => {
-  updateLight('first-floor', data['first-floor']);
-  updateLight('garage', data['garage']);
-  updateLight('beneden', data['beneden']);
-  updateLight('vrouwen', data['vrouwen']);
+  updateLight('first-floor-light', data['first-floor']);
+  updateLight('garage-light', data['garage']);
+  updateLight('beneden-light', data['beneden']);
+  updateLight('vrouwen-light', data['vrouwen']);
 });
 
 // Luister naar statusupdates
 socket.on('statusUpdated', (data) => {
-  updateLight(data.room, data.status);
+  console.log("Status update ontvangen:", data);
+  updateLight(`${data.room}-light`, data.status);
 });
 
-// Functie om het licht en de symbolen bij te werken
-function updateLight(room, status) {
-  const light = document.getElementById(`${room}-light`);
-  const checkIcon = document.getElementById(`${room}-check`);
-  const crossIcon = document.getElementById(`${room}-cross`);
+// Functie om het licht en de iconen bij te werken
+function updateLight(elementId, status) {
+  const light = document.getElementById(elementId);
+  if (!light) {
+    console.warn(`Element niet gevonden: ${elementId}`);
+    return;
+  }
 
-  if (light && checkIcon && crossIcon) {
-    // Reset kleuren en iconen
-    light.classList.remove('green', 'red', 'grey');
+  const checkIcon = light.querySelector(".fa-check");
+  const crossIcon = light.querySelector(".fa-times");
+
+  if (!checkIcon || !crossIcon) {
+    console.warn(`Icons niet gevonden in: ${elementId}`);
+    return;
+  }
+
+  // Verwijder alle kleurklassen
+  light.classList.remove('green', 'red', 'grey');
+
+  // Voeg de juiste kleurklasse toe en toon het juiste icoon
+  if (status === 'green') {
+    light.classList.add('green');
+    checkIcon.style.display = 'block';
+    crossIcon.style.display = 'none';
+  } else if (status === 'red') {
+    light.classList.add('red');
+    checkIcon.style.display = 'none';
+    crossIcon.style.display = 'block';
+  } else {
+    light.classList.add('grey');
     checkIcon.style.display = 'none';
     crossIcon.style.display = 'none';
-
-    // Voeg de juiste klasse en icoon toe
-    if (status === 'green') {
-      light.classList.add('green');
-      checkIcon.style.display = 'inline-block'; // Alternatief voor 'block'
-    } else if (status === 'red') {
-      light.classList.add('red');
-      crossIcon.style.display = 'inline-block'; // Alternatief voor 'block'
-    } else {
-      light.classList.add('grey');
-    }
   }
+
+  console.log(`Licht bijgewerkt: ${elementId} → ${status}`);
 }
-
-// Debugging: Check of de verbinding werkt
-socket.on('connect', () => {
-  console.log('Verbonden met de Socket.IO-server');
-});
-
-socket.on('disconnect', () => {
-  console.log('Verbinding verbroken. Wachten op herverbinding...');
-});
