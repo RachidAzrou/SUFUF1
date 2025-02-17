@@ -200,23 +200,23 @@ button:hover {
 
 /* Media query voor kleinere schermen (mobiele telefoons) */
 @media (max-width: 767px) {
-  .logout-button {
-    position: static; /* Standaard positie (onder de terugknop) */
+  .status-container {
+    display: flex;
+    flex-wrap: wrap; /* Laat de items over meerdere regels verdelen */
+    justify-content: space-between; /* Zorg ervoor dat de lichten naast elkaar staan */
+    align-items: center; /* Verticaal uitlijnen */
   }
 
-  .bottom-buttons {
-    flex-direction: column; /* Zet knoppen onder elkaar */
-    align-items: flex-start; /* Uitlijnen aan de linkerkant */
-
-      .status-container {
-    flex-direction: column; /* Zet de lichten onder elkaar (verticaal) */
-    align-items: center; /* Center de lichten horizontaal */
+  .status {
+    flex: 1 0 45%; /* Zorg ervoor dat de lichten 45% van de breedte nemen */
+    margin-bottom: 20px; /* Ruimte tussen de lichten */
+    text-align: center;
   }
 
+  /* De lichten zelf kunnen hetzelfde blijven, maar als je meer controle wilt, kan je het ook hier aanpassen */
   .light {
-    margin: 10px 0; /* Voeg wat ruimte toe tussen de lichten */
-  }
-}
+    width: 100px; /* Zorg ervoor dat de lichten kleiner zijn als je ze naast elkaar wilt hebben */
+    height: 100px; /* Vergroot de hoogte iets om meer ruimte te geven */
   }
 }
 
