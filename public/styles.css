@@ -208,17 +208,15 @@ button:hover {
     flex-direction: column; /* Zet knoppen onder elkaar */
     align-items: flex-start; /* Uitlijnen aan de linkerkant */
   }
+}
 
-  /* Status-container aanpassing voor mobiele schermen */
-  .status-container {
-    flex-direction: column; /* Zet de lichten verticaal */
-    align-items: center; /* Centreer de lichten */
-  }
-
-  .status {
-    width: 100%; /* Zorg ervoor dat elke status de volledige breedte krijgt */
-    margin-bottom: 20px; /* Voeg wat ruimte toe tussen de statusblokken */
-  }
+/* Login Form Styling */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
 
   /* Verklein de titels van de ruimtes */
   .status h2 {
@@ -231,14 +229,6 @@ button:hover {
     font-size: 3rem; /* Verhoog de font-grootte voor de hoofdtitel */
     margin-top: 0px;
   }
-}
-
-#login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
 
 #login-form input {
   padding: 10px;
@@ -294,4 +284,33 @@ button:hover {
   cursor: pointer;
   top: 0;
   left: 0;
- 
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 5px;
+  bottom: 5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #28a745; /* Groen voor OK */
+}
+
+input:checked + .slider:before {
+  transform: translateX(50px);
+}
+
+input:checked + .slider.nok {
+  background-color: #dc3545; /* Rood voor NOK */
+}
