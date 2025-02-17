@@ -148,8 +148,10 @@ button:hover {
 
 /* Symbolen in de lichten */
 .light i {
-  color: white; /* Witte kleur voor de symbolen */
-  display: none; /* Verberg het symbool standaard */
+  color: white;
+  display: none; /* Zorgt ervoor dat ze standaard verborgen zijn */
+  font-size: 3rem; /* Maakt ze goed zichtbaar */
+  position: absolute; /* Zorgt ervoor dat ze gecentreerd blijven */
 }
 
 /* Bottom Buttons Container */
