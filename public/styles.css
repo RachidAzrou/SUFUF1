@@ -1,316 +1,104 @@
-/* Algemene stijlen */
+/* Basisstijl voor de pagina */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, rgba(245, 247, 250, 0.9), rgba(195, 207, 226, 0.9)), url('images/5540822.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.container {
-  text-align: center;
-  background-color: white;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Voeg dit toe */
-}
-
-.logo {
-  width: 400px;
-  height: auto;
-  margin-bottom: 10px; /* Verkleind van 30px naar 10px */
-}
-
-h1 {
-  font-size: 4rem;
-  margin-bottom: 10px; /* Verkleind van 20px naar 10px */
-  color: #963E56;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px; /* Verkleind van 50px naar 20px */
-  color: #D9A347;
-  font-weight: 400;
-}
-
-/* Stijl voor de goudkleurige titel in het login-scherm */
-.gold-title {
-  font-size: 2.5rem; /* Gelijk aan de h2-stijl */
-  color: #D9A347; /* Goudkleur */
-  font-weight: 400; /* Gelijk aan de h2-stijl */
-  margin-bottom: 20px; /* Gelijk aan de h2-stijl */
-}
-
-.buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px; /* Verkleind van 20px naar 10px */
-}
-
-/* Stijl voor alle knoppen (behalve de terug-knop) */
-button {
-  width: 200px; /* Vaste breedte voor alle knoppen */
-  height: 50px; /* Vaste hoogte voor alle knoppen */
-  margin: 10px; /* Ruimte tussen de knoppen */
-  font-size: 16px; /* Tekstgrootte */
-  border: none; /* Geen rand */
-  border-radius: 5px; /* Afgeronde hoeken */
-  background-color: #6BB85C; /* Groene achtergrondkleur */
-  color: white; /* Witte tekst */
-  cursor: pointer; /* Verander de muiscursor */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
-}
-
-/* Hover-effect voor knoppen */
-button:hover {
-  background-color: #5aa34d; /* Donkerder groen bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
-}
-
-/* Stijl voor de terugknop */
-.back-button {
-  width: auto; /* Breedte aanpassen aan de inhoud */
-  padding: 8px 16px; /* Kleinere padding */
-  background-color: #963E56; /* Rode achtergrondkleur */
-  text-decoration: none; /* Geen onderstreping */
-  color: white; /* Witte tekst */
-  border-radius: 5px; /* Afgeronde hoeken */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
-  text-align: center; /* Tekst centreren */
-  font-size: 14px; /* Kleinere tekst */
-  margin-top: 20px; /* Ruimte boven de knop */
-}
-
-/* Hover-effect voor de terugknop */
-.back-button:hover {
-  background-color: #7a3248; /* Donkerder rood bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
-}
-
-/* Status-container voor de lichten */
-.status-container {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  margin-top: 20px; /* Verkleind van 40px naar 20px */
-}
-
-.status {
-  text-align: center;
-}
-
-/* Modernere lichten */
-.light {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: grey;
-  margin: 20px auto;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem; /* Grootte van de symbolen */
-}
-
-.light.green {
-  background-color: #28a745; /* Groen licht */
-}
-
-.light.red {
-  background-color: #dc3545; /* Rood licht */
-}
-
-.light.grey {
-  background-color: grey; /* Grijs licht */
-}
-
-/* Symbolen in de lichten */
-.light i {
-  color: white;
-  display: none; /* Zorgt ervoor dat ze standaard verborgen zijn */
-  font-size: 3rem; /* Maakt ze goed zichtbaar */
-  position: absolute; /* Zorgt ervoor dat ze gecentreerd blijven */
-}
-.light .visible {
-  display: block; /* Alleen de juiste icoon tonen */
-}
-/* Bottom Buttons Container */
-.bottom-buttons {
-  display: flex;
-  gap: 10px; /* Ruimte tussen de knoppen */
-  margin-top: 20px; /* Ruimte boven de knoppen */
-  justify-content: flex-start; /* Zet knoppen aan de linkerkant */
-}
-
-/* Logout Button Styling (Afmelden knop) */
-.logout-button {
-  width: auto; /* Breedte aanpassen aan de inhoud */
-  padding: 8px 16px; /* Kleinere padding */
-  background-color: #963E56; /* Rode achtergrondkleur */
-  text-decoration: none; /* Geen onderstreping */
-  color: white; /* Witte tekst */
-  border-radius: 5px; /* Afgeronde hoeken */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Soepele overgang voor hover-effect */
-  text-align: center; /* Tekst centreren */
-  cursor: pointer; /* Verander de muiscursor */
-  border: none; /* Geen rand */
-  font-size: 14px; /* Kleinere tekst */
-}
-
-/* Hover-effect voor de logout-knop */
-.logout-button:hover {
-  background-color: #7a3248; /* Donkerder rood bij hover */
-  transform: scale(1.05); /* Licht vergroten bij hover */
-}
-
-/* Media query voor grotere schermen (tablets, desktops, monitoren) */
-@media (min-width: 768px) {
-  .logout-button {
-    position: absolute; /* Positioneer de afmeldknop absoluut */
-    top: 20px; /* Afstand vanaf de bovenkant */
-    right: 20px; /* Afstand vanaf de rechterkant */
-  }
-
-  .bottom-buttons {
-    justify-content: flex-start; /* Zet de terugknop aan de linkerkant */
-  }
-}
-
-/* Media query voor kleinere schermen (mobiele telefoons) */
-@media (max-width: 767px) {
-  .logout-button {
-    position: static; /* Standaard positie (onder de terugknop) */
-  }
-
-  .bottom-buttons {
-    flex-direction: column; /* Zet knoppen onder elkaar */
-    align-items: flex-start; /* Uitlijnen aan de linkerkant */
-  }
-}
-
-/* Login Form Styling */
-#login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-  /* Verklein de titels van de ruimtes */
-  .status h2 {
-    font-size: 1.5rem; /* Maak de tekst kleiner */
-    margin-top: 10px;
-  }
-
-  /* Vergroot de hoofdtitel "Ruimtes" */
-  h1 {
-    font-size: 3rem; /* Verhoog de font-grootte voor de hoofdtitel */
-    margin-top: 0px;
-  }
-
-#login-form input {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#login-form button {
-  padding: 10px;
-  font-size: 1rem;
-  background-color: #6BB85C;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#login-form button:hover {
-  background-color: #5aa34d;
-}
-
-/* Vrijwilliger Knoppen Styling */
-.switch-container {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px; /* Verkleind van 40px naar 20px */
-}
-
-.switch-container label {
-  font-size: 1.5rem;
-  font-weight: 600;
+  background-color: #f4f4f4;
   color: #333;
 }
 
-.switch {
-  position: relative;
+/* Container voor de inhoud */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+/* Titel van de pagina */
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Statuscontainer die de ruimte voor de lichten bepaalt */
+.status-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Elke status (licht) */
+.status {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* De lichten die de status aangeven */
+.light {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light i {
+  margin: 0 5px;
+}
+
+/* Terugknop */
+.back-button {
   display: inline-block;
-  width: 100px;
-  height: 50px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.back-button:hover {
+  background-color: #555;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 50px;
+/* Media query voor kleinere schermen (mobiele weergave) */
+@media (max-width: 768px) {
+  .status-container {
+    flex-direction: column; /* Zet de lichten verticaal */
+    align-items: center; /* Centreer de lichten */
+  }
+
+  .status {
+    width: 100%; /* Zorg ervoor dat elke status de volledige breedte krijgt */
+    margin-bottom: 20px; /* Voeg wat ruimte toe tussen de statusblokken */
+  }
+
+  /* Verklein de font-size voor mobiel */
+  h1 {
+    font-size: 2rem;
+  }
+
+  .light {
+    font-size: 1.5rem;
+  }
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 40px;
-  width: 40px;
-  left: 5px;
-  bottom: 5px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
+/* Extra styling voor de iconen (check en cross) */
+.fas.fa-check {
+  color: green;
 }
 
-input:checked + .slider {
-  background-color: #28a745; /* Groen voor OK */
-}
-
-input:checked + .slider:before {
-  transform: translateX(50px);
-}
-
-input:checked + .slider.nok {
-  background-color: #dc3545; /* Rood voor NOK */
+.fas.fa-times {
+  color: red;
 }
