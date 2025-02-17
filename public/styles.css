@@ -207,6 +207,16 @@ button:hover {
   .bottom-buttons {
     flex-direction: column; /* Zet knoppen onder elkaar */
     align-items: flex-start; /* Uitlijnen aan de linkerkant */
+
+      .status-container {
+    flex-direction: column; /* Zet de lichten onder elkaar (verticaal) */
+    align-items: center; /* Center de lichten horizontaal */
+  }
+
+  .light {
+    margin: 10px 0; /* Voeg wat ruimte toe tussen de lichten */
+  }
+}
   }
 }
 
