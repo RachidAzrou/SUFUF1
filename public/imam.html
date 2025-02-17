@@ -6,6 +6,7 @@
   <title>Imam - Sufuf</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome voor iconen -->
   <style>
     .imam-page .logo {
       position: absolute;
@@ -32,8 +33,20 @@
     }
 
     .light {
-      margin-top: 5px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: grey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: white;
     }
+
+    .green { background-color: #28a745; }
+    .red { background-color: #dc3545; }
+    .grey { background-color: grey; }
 
     /* Media query voor mobiele schermen */
     @media (max-width: 767px) {
@@ -108,6 +121,7 @@
     </div>
     <a href="/" class="back-button">Terug</a>
   </div>
+  
   <script src="/socket.io/socket.io.js"></script>
   <script src="imam.js"></script>
 </body>
