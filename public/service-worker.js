@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-const cacheName = 'sufuf-app-cache-v4.2'; // Zorg ervoor dat deze versie altijd wordt verhoogd wanneer je nieuwe veranderingen uitbrengt
-=======
-const cacheName = 'sufuf-app-cache-v4.0'; // Zorg ervoor dat deze versie altijd wordt verhoogd wanneer je nieuwe veranderingen uitbrengt
->>>>>>> 0054f79 (h)
+const cacheName = 'sufuf-app-cache-v4.1'; // Zorg ervoor dat deze versie altijd wordt verhoogd wanneer je nieuwe veranderingen uitbrengt
+const assets = [
 const assets = [
   '/',
   '/index.html',
