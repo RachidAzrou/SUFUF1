@@ -5,7 +5,7 @@ socket.on('initialStatus', (data) => {
   updateLight('first-floor-light', data['first-floor']);
   updateLight('garage-light', data['garage']);
   updateLight('beneden-light', data['beneden']);
-  updateLight('vrouwen-light', data['vrouwen']);
+  //updateLight('vrouwen-light', data['vrouwen']);
 });
 
 // Luister naar statusupdates
